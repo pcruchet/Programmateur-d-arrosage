@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contrôleur d&#39;Arrosage:  Fichier source de ControleurArrosage/vanne.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Contrôleur d&#39;Arrosage
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('vanne_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vanne.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="vanne_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef VANNE_H</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define VANNE_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QDateTime&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QQmlEngine&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classVanne.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classVanne.html">Vanne</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Q_OBJECT</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QML_NAMED_ELEMENT(<a class="code hl_class" href="classVanne.html">Vanne</a>)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QML_UNCREATABLE(<span class="stringliteral">&quot;Enum only&quot;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classVanne.html#a7e3cd2473c585aa2791264941cd5cc73">   39</a></span>    Q_PROPERTY(<span class="keywordtype">bool</span> <a class="code hl_property" href="classVanne.html#a7e3cd2473c585aa2791264941cd5cc73">etat</a> READ <a class="code hl_function" href="classVanne.html#ab4db65466b73aa29a7f0bb737de8b779">getEtat</a> WRITE <a class="code hl_function" href="classVanne.html#adbf5b4591e2ea60ec40a010a223b0e4a">setEtat</a> NOTIFY <a class="code hl_signal" href="classVanne.html#ad070e023de6b955e853c9fbb5f0a89fe">etatChanged</a>)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classVanne.html#a938754049e2f86dfe130449a267f6971">   40</a></span>    Q_PROPERTY(<a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">MODE</a> <a class="code hl_property" href="classVanne.html#a938754049e2f86dfe130449a267f6971">mode</a> READ <a class="code hl_function" href="classVanne.html#ac1180aeab34f2e54f414197235f4d823">getMode</a> WRITE <a class="code hl_function" href="classVanne.html#a288802afd08b7ac2404df7945f97ad0d">setMode</a> NOTIFY <a class="code hl_signal" href="classVanne.html#ab32b41117a602d637de495be7bddeae6">modeChanged</a>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classVanne.html#ac3437954aa2393e3c10c2f1967ad593d">   41</a></span>    Q_PROPERTY(<a class="code hl_enumeration" href="classVanne.html#a90050d7a494ef53b160c372182f00581">PROGRAM_STATE</a> <a class="code hl_property" href="classVanne.html#ac3437954aa2393e3c10c2f1967ad593d">programmeState</a> READ <a class="code hl_function" href="classVanne.html#a316711ecfc0204208508737f88c08e89">getProgrammeState</a> WRITE <a class="code hl_function" href="classVanne.html#ab87533409ecbed1c34b30d74d21ef22d">setProgrammeState</a> NOTIFY <a class="code hl_signal" href="classVanne.html#ad0d84ca2c9791bf9269486cc62383d26">programmeStateChanged</a>)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classVanne.html#a6d442907e2c389bff5dd86465a0369be">   42</a></span>    Q_PROPERTY(QString <a class="code hl_property" href="classVanne.html#a6d442907e2c389bff5dd86465a0369be">nom</a> READ <a class="code hl_function" href="classVanne.html#a709babecfe91da73951c6cc98516a60b">getNom</a> WRITE <a class="code hl_function" href="classVanne.html#aeb4f8c57ba5cef76b70ea3739e7cbcfb">setNom</a> NOTIFY <a class="code hl_signal" href="classVanne.html#a0c3b7c71d74cd17723ad36a3e8aaed88">nomChanged</a>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classVanne.html#acf70de1fa615a217ce16361c851f22e6">   43</a></span>    Q_PROPERTY(QDateTime <a class="code hl_property" href="classVanne.html#acf70de1fa615a217ce16361c851f22e6">debut</a> READ <a class="code hl_function" href="classVanne.html#a34e9b89b945b497eb2661f17cc0d4d73">getDebut</a> WRITE <a class="code hl_function" href="classVanne.html#a2bb3f18ea9fed3ec2b8c5ee3f5152e52">setDebut</a> NOTIFY <a class="code hl_signal" href="classVanne.html#a40130d8a1e2537c432bb00980b4d712f">debutChanged</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classVanne.html#ac102ae0c4eda76aff5f846df11dc5a7d">   44</a></span>    Q_PROPERTY(<span class="keywordtype">int</span> <a class="code hl_property" href="classVanne.html#ac102ae0c4eda76aff5f846df11dc5a7d">duree</a> READ <a class="code hl_function" href="classVanne.html#a88abadaff21db4b22205301e713029b8">getDuree</a> WRITE <a class="code hl_function" href="classVanne.html#af2f7f687329cea5981d628d621af8103">setDuree</a> NOTIFY <a class="code hl_signal" href="classVanne.html#a897e7055ead7288f5c545e79564ccb06">dureeChanged</a>)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classVanne.html#a56f20fb6a7dac08a0631133b1279dc96">   45</a></span>    Q_PROPERTY(<span class="keywordtype">int</span> <a class="code hl_property" href="classVanne.html#a56f20fb6a7dac08a0631133b1279dc96">frequence</a> READ <a class="code hl_function" href="classVanne.html#a058db3d3e0e3038f4f0ceac0ccc5112c">getFrequence</a> WRITE <a class="code hl_function" href="classVanne.html#acf1ba4ec742bb3a86fd984585697d558">setFrequence</a> NOTIFY <a class="code hl_signal" href="classVanne.html#aff5382ef3a6acf4275d970f0a726e454">frequenceChanged</a>)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classVanne.html#a33d1507a13e1fe4d3d16a9d3d1ae696d">   46</a></span>    Q_PROPERTY(<span class="keywordtype">bool</span> <a class="code hl_property" href="classVanne.html#a33d1507a13e1fe4d3d16a9d3d1ae696d">synchronisee</a> READ <a class="code hl_function" href="classVanne.html#a69bf49cfa56a465bdb0dabf1764c8040">estSynchronisee</a> WRITE <a class="code hl_function" href="classVanne.html#ab0db79d07218dafe272710707be5203c">setSynchronisee</a> NOTIFY <a class="code hl_signal" href="classVanne.html#aa9c0ccd3ef4f5fb56d22ddb6fc6467c0">synchroniseeChanged</a>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>public:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="};">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">   51</a></span>    enum <a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">MODE</a> {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classVanne.html#ae6f41230c66988adad922f0b3783e711a4fdb8b2fc8dab93b9bcbf8299a117a75">   52</a></span>        <a class="code hl_enumvalue" href="classVanne.html#ae6f41230c66988adad922f0b3783e711a4fdb8b2fc8dab93b9bcbf8299a117a75">Manuel</a>,      </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classVanne.html#ae6f41230c66988adad922f0b3783e711ade69cc72f38940f8231de96ac26fa837">   53</a></span>        <a class="code hl_enumvalue" href="classVanne.html#ae6f41230c66988adad922f0b3783e711ade69cc72f38940f8231de96ac26fa837">Programme</a>,   </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_enumvalue" href="classVanne.html#ae6f41230c66988adad922f0b3783e711a03006e3dc2e0788707e3ada2ac80a77a">Automatique</a>  </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classVanne.html#ae6f41230c66988adad922f0b3783e711a03006e3dc2e0788707e3ada2ac80a77a">   55</a></span>    };</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Q_ENUM(<a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">MODE</a>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classVanne.html#a90050d7a494ef53b160c372182f00581">   59</a></span>    enum <a class="code hl_enumeration" href="classVanne.html#a90050d7a494ef53b160c372182f00581">PROGRAM_STATE</a> {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classVanne.html#a90050d7a494ef53b160c372182f00581afe9ac290f5e0c8c28903a8975514b77f">   60</a></span>        <a class="code hl_enumvalue" href="classVanne.html#a90050d7a494ef53b160c372182f00581afe9ac290f5e0c8c28903a8975514b77f">Actif</a>,    </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_enumvalue" href="classVanne.html#a90050d7a494ef53b160c372182f00581aaa4497506bac518b8f0c4738632fd230">Suspendu</a>  </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classVanne.html#a90050d7a494ef53b160c372182f00581aaa4497506bac518b8f0c4738632fd230">   62</a></span>    };</div>
+</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Q_ENUM(<a class="code hl_enumeration" href="classVanne.html#a90050d7a494ef53b160c372182f00581">PROGRAM_STATE</a>)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classVanne.html">Vanne</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> _id, QObject *_parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// ================= GETTERS =================</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classVanne.html#ab4db65466b73aa29a7f0bb737de8b779">getEtat</a>() <span class="keyword">const</span>;                    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">MODE</a> <a class="code hl_function" href="classVanne.html#ac1180aeab34f2e54f414197235f4d823">getMode</a>() <span class="keyword">const</span>;                    </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_enumeration" href="classVanne.html#a90050d7a494ef53b160c372182f00581">PROGRAM_STATE</a> <a class="code hl_function" href="classVanne.html#a316711ecfc0204208508737f88c08e89">getProgrammeState</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    QString <a class="code hl_function" href="classVanne.html#a709babecfe91da73951c6cc98516a60b">getNom</a>() <span class="keyword">const</span>;      </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    QDateTime <a class="code hl_function" href="classVanne.html#a34e9b89b945b497eb2661f17cc0d4d73">getDebut</a>() <span class="keyword">const</span>;  </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classVanne.html#a88abadaff21db4b22205301e713029b8">getDuree</a>() <span class="keyword">const</span>;        </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classVanne.html#a058db3d3e0e3038f4f0ceac0ccc5112c">getFrequence</a>() <span class="keyword">const</span>;    </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classVanne.html#a69bf49cfa56a465bdb0dabf1764c8040">estSynchronisee</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classVanne.html#a27075a2bc592f9607abf48193599a1a7">getId</a>() <span class="keyword">const</span>;            </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">// ================= SETTERS =================</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#adbf5b4591e2ea60ec40a010a223b0e4a">setEtat</a>(<span class="keywordtype">bool</span> _etat);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#a288802afd08b7ac2404df7945f97ad0d">setMode</a>(<a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">MODE</a> _mode);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#ab87533409ecbed1c34b30d74d21ef22d">setProgrammeState</a>(<a class="code hl_enumeration" href="classVanne.html#a90050d7a494ef53b160c372182f00581">PROGRAM_STATE</a> _state);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#aeb4f8c57ba5cef76b70ea3739e7cbcfb">setNom</a>(<span class="keyword">const</span> QString &amp;_nom);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#a2bb3f18ea9fed3ec2b8c5ee3f5152e52">setDebut</a>(<span class="keyword">const</span> QDateTime &amp;_debut);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#af2f7f687329cea5981d628d621af8103">setDuree</a>(<span class="keywordtype">int</span> _duree);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#acf1ba4ec742bb3a86fd984585697d558">setFrequence</a>(<span class="keywordtype">int</span> _frequence);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#ab0db79d07218dafe272710707be5203c">setSynchronisee</a>(<span class="keywordtype">bool</span> _synchronisee);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#a5a4f040edc1dbe5ab1a7026accb2546e">setId</a>(<span class="keywordtype">int</span> _newId);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">// ================= API MÉTIER =================</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#a5348d8158944acc7cda0fd9535e2fc7a">toggleEtat</a>();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#a4e6d66898be80c0beb4d7548cf815600">activerProgramme</a>();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#ac661ef2151f491ed17e01fe5aaefd9d1">suspendreProgramme</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#a77f20a8aa0b3c6a5cfac067a6551bfd9">reprendreProgramme</a>();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    Q_INVOKABLE <span class="keywordtype">void</span> <a class="code hl_function" href="classVanne.html#add594c51bc7db10363dce4659f10272c">passerEnManuel</a>();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>signals:</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classVanne.html#ad070e023de6b955e853c9fbb5f0a89fe">  147</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#ad070e023de6b955e853c9fbb5f0a89fe">etatChanged</a>();           </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="classVanne.html#ab32b41117a602d637de495be7bddeae6">  148</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#ab32b41117a602d637de495be7bddeae6">modeChanged</a>();           </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classVanne.html#ad0d84ca2c9791bf9269486cc62383d26">  149</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#ad0d84ca2c9791bf9269486cc62383d26">programmeStateChanged</a>(); </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classVanne.html#a0c3b7c71d74cd17723ad36a3e8aaed88">  150</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#a0c3b7c71d74cd17723ad36a3e8aaed88">nomChanged</a>();            </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="classVanne.html#a40130d8a1e2537c432bb00980b4d712f">  151</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#a40130d8a1e2537c432bb00980b4d712f">debutChanged</a>();          </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classVanne.html#a897e7055ead7288f5c545e79564ccb06">  152</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#a897e7055ead7288f5c545e79564ccb06">dureeChanged</a>();          </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classVanne.html#aff5382ef3a6acf4275d970f0a726e454">  153</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#aff5382ef3a6acf4275d970f0a726e454">frequenceChanged</a>();      </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classVanne.html#aa9c0ccd3ef4f5fb56d22ddb6fc6467c0">  154</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classVanne.html#aa9c0ccd3ef4f5fb56d22ddb6fc6467c0">synchroniseeChanged</a>();   </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">bool</span> m_etat;                    </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">MODE</a> m_mode;                    </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_enumeration" href="classVanne.html#a90050d7a494ef53b160c372182f00581">PROGRAM_STATE</a> m_programmeState; </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    QString m_nom; </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    QDateTime m_debut; </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">int</span> m_duree;       </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">int</span> m_frequence;   </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">bool</span> m_synchronisee; </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">int</span> id;               </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>};</div>
+</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#endif </span><span class="comment">// VANNE_H</span></div>
+<div class="ttc" id="aclassVanne_html"><div class="ttname"><a href="classVanne.html">Vanne</a></div><div class="ttdoc">Classe C++ : Image logicielle d'une électrovanne réelle.</div><div class="ttdef"><b>Definition</b> vanne.h:34</div></div>
+<div class="ttc" id="aclassVanne_html_a058db3d3e0e3038f4f0ceac0ccc5112c"><div class="ttname"><a href="classVanne.html#a058db3d3e0e3038f4f0ceac0ccc5112c">Vanne::getFrequence</a></div><div class="ttdeci">int getFrequence() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:57</div></div>
+<div class="ttc" id="aclassVanne_html_a0c3b7c71d74cd17723ad36a3e8aaed88"><div class="ttname"><a href="classVanne.html#a0c3b7c71d74cd17723ad36a3e8aaed88">Vanne::nomChanged</a></div><div class="ttdeci">void nomChanged()</div><div class="ttdoc">Émis quand le nom change.</div></div>
+<div class="ttc" id="aclassVanne_html_a27075a2bc592f9607abf48193599a1a7"><div class="ttname"><a href="classVanne.html#a27075a2bc592f9607abf48193599a1a7">Vanne::getId</a></div><div class="ttdeci">int getId() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:67</div></div>
+<div class="ttc" id="aclassVanne_html_a288802afd08b7ac2404df7945f97ad0d"><div class="ttname"><a href="classVanne.html#a288802afd08b7ac2404df7945f97ad0d">Vanne::setMode</a></div><div class="ttdeci">void setMode(MODE _mode)</div><div class="ttdoc">Modifie le mode et émet modeChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:83</div></div>
+<div class="ttc" id="aclassVanne_html_a2bb3f18ea9fed3ec2b8c5ee3f5152e52"><div class="ttname"><a href="classVanne.html#a2bb3f18ea9fed3ec2b8c5ee3f5152e52">Vanne::setDebut</a></div><div class="ttdeci">void setDebut(const QDateTime &amp;_debut)</div><div class="ttdoc">Modifie l'heure de début programmée et émet debutChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:110</div></div>
+<div class="ttc" id="aclassVanne_html_a316711ecfc0204208508737f88c08e89"><div class="ttname"><a href="classVanne.html#a316711ecfc0204208508737f88c08e89">Vanne::getProgrammeState</a></div><div class="ttdeci">PROGRAM_STATE getProgrammeState() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:37</div></div>
+<div class="ttc" id="aclassVanne_html_a33d1507a13e1fe4d3d16a9d3d1ae696d"><div class="ttname"><a href="classVanne.html#a33d1507a13e1fe4d3d16a9d3d1ae696d">Vanne::synchronisee</a></div><div class="ttdeci">bool synchronisee</div><div class="ttdef"><b>Definition</b> vanne.h:46</div></div>
+<div class="ttc" id="aclassVanne_html_a34e9b89b945b497eb2661f17cc0d4d73"><div class="ttname"><a href="classVanne.html#a34e9b89b945b497eb2661f17cc0d4d73">Vanne::getDebut</a></div><div class="ttdeci">QDateTime getDebut() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:47</div></div>
+<div class="ttc" id="aclassVanne_html_a40130d8a1e2537c432bb00980b4d712f"><div class="ttname"><a href="classVanne.html#a40130d8a1e2537c432bb00980b4d712f">Vanne::debutChanged</a></div><div class="ttdeci">void debutChanged()</div><div class="ttdoc">Émis quand l'heure de début programmée change.</div></div>
+<div class="ttc" id="aclassVanne_html_a4e6d66898be80c0beb4d7548cf815600"><div class="ttname"><a href="classVanne.html#a4e6d66898be80c0beb4d7548cf815600">Vanne::activerProgramme</a></div><div class="ttdeci">Q_INVOKABLE void activerProgramme()</div><div class="ttdoc">Passe en mode Programme avec programmation active (raccourci pour setMode(Programme) + setProgrammeSt...</div><div class="ttdef"><b>Definition</b> vanne.cpp:159</div></div>
+<div class="ttc" id="aclassVanne_html_a5348d8158944acc7cda0fd9535e2fc7a"><div class="ttname"><a href="classVanne.html#a5348d8158944acc7cda0fd9535e2fc7a">Vanne::toggleEtat</a></div><div class="ttdeci">Q_INVOKABLE void toggleEtat()</div><div class="ttdoc">Bascule l'état ouvert/fermé (raccourci pour setEtat(!getEtat())).</div><div class="ttdef"><b>Definition</b> vanne.cpp:154</div></div>
+<div class="ttc" id="aclassVanne_html_a56f20fb6a7dac08a0631133b1279dc96"><div class="ttname"><a href="classVanne.html#a56f20fb6a7dac08a0631133b1279dc96">Vanne::frequence</a></div><div class="ttdeci">int frequence</div><div class="ttdef"><b>Definition</b> vanne.h:45</div></div>
+<div class="ttc" id="aclassVanne_html_a5a4f040edc1dbe5ab1a7026accb2546e"><div class="ttname"><a href="classVanne.html#a5a4f040edc1dbe5ab1a7026accb2546e">Vanne::setId</a></div><div class="ttdeci">void setId(int _newId)</div><div class="ttdoc">Modifie l'identifiant de la vanne (sans notification dédiée).</div><div class="ttdef"><b>Definition</b> vanne.cpp:146</div></div>
+<div class="ttc" id="aclassVanne_html_a69bf49cfa56a465bdb0dabf1764c8040"><div class="ttname"><a href="classVanne.html#a69bf49cfa56a465bdb0dabf1764c8040">Vanne::estSynchronisee</a></div><div class="ttdeci">bool estSynchronisee() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:62</div></div>
+<div class="ttc" id="aclassVanne_html_a6d442907e2c389bff5dd86465a0369be"><div class="ttname"><a href="classVanne.html#a6d442907e2c389bff5dd86465a0369be">Vanne::nom</a></div><div class="ttdeci">QString nom</div><div class="ttdef"><b>Definition</b> vanne.h:42</div></div>
+<div class="ttc" id="aclassVanne_html_a709babecfe91da73951c6cc98516a60b"><div class="ttname"><a href="classVanne.html#a709babecfe91da73951c6cc98516a60b">Vanne::getNom</a></div><div class="ttdeci">QString getNom() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:42</div></div>
+<div class="ttc" id="aclassVanne_html_a77f20a8aa0b3c6a5cfac067a6551bfd9"><div class="ttname"><a href="classVanne.html#a77f20a8aa0b3c6a5cfac067a6551bfd9">Vanne::reprendreProgramme</a></div><div class="ttdeci">Q_INVOKABLE void reprendreProgramme()</div><div class="ttdoc">Réactive la programmation en mode Programme (raccourci pour setMode(Programme) + setProgrammeState(Ac...</div><div class="ttdef"><b>Definition</b> vanne.cpp:170</div></div>
+<div class="ttc" id="aclassVanne_html_a7e3cd2473c585aa2791264941cd5cc73"><div class="ttname"><a href="classVanne.html#a7e3cd2473c585aa2791264941cd5cc73">Vanne::etat</a></div><div class="ttdeci">bool etat</div><div class="ttdef"><b>Definition</b> vanne.h:39</div></div>
+<div class="ttc" id="aclassVanne_html_a88abadaff21db4b22205301e713029b8"><div class="ttname"><a href="classVanne.html#a88abadaff21db4b22205301e713029b8">Vanne::getDuree</a></div><div class="ttdeci">int getDuree() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:52</div></div>
+<div class="ttc" id="aclassVanne_html_a897e7055ead7288f5c545e79564ccb06"><div class="ttname"><a href="classVanne.html#a897e7055ead7288f5c545e79564ccb06">Vanne::dureeChanged</a></div><div class="ttdeci">void dureeChanged()</div><div class="ttdoc">Émis quand la durée programmée change.</div></div>
+<div class="ttc" id="aclassVanne_html_a90050d7a494ef53b160c372182f00581"><div class="ttname"><a href="classVanne.html#a90050d7a494ef53b160c372182f00581">Vanne::PROGRAM_STATE</a></div><div class="ttdeci">PROGRAM_STATE</div><div class="ttdoc">État d'activation de la programmation d'une vanne.</div><div class="ttdef"><b>Definition</b> vanne.h:59</div></div>
+<div class="ttc" id="aclassVanne_html_a90050d7a494ef53b160c372182f00581aaa4497506bac518b8f0c4738632fd230"><div class="ttname"><a href="classVanne.html#a90050d7a494ef53b160c372182f00581aaa4497506bac518b8f0c4738632fd230">Vanne::Suspendu</a></div><div class="ttdeci">@ Suspendu</div><div class="ttdoc">La programmation est suspendue (ex. après un passage manuel en mode Manuel).</div><div class="ttdef"><b>Definition</b> vanne.h:61</div></div>
+<div class="ttc" id="aclassVanne_html_a90050d7a494ef53b160c372182f00581afe9ac290f5e0c8c28903a8975514b77f"><div class="ttname"><a href="classVanne.html#a90050d7a494ef53b160c372182f00581afe9ac290f5e0c8c28903a8975514b77f">Vanne::Actif</a></div><div class="ttdeci">@ Actif</div><div class="ttdoc">La programmation est active : la vanne s'ouvre/se ferme automatiquement.</div><div class="ttdef"><b>Definition</b> vanne.h:60</div></div>
+<div class="ttc" id="aclassVanne_html_a938754049e2f86dfe130449a267f6971"><div class="ttname"><a href="classVanne.html#a938754049e2f86dfe130449a267f6971">Vanne::mode</a></div><div class="ttdeci">MODE mode</div><div class="ttdef"><b>Definition</b> vanne.h:40</div></div>
+<div class="ttc" id="aclassVanne_html_aa9c0ccd3ef4f5fb56d22ddb6fc6467c0"><div class="ttname"><a href="classVanne.html#aa9c0ccd3ef4f5fb56d22ddb6fc6467c0">Vanne::synchroniseeChanged</a></div><div class="ttdeci">void synchroniseeChanged()</div><div class="ttdoc">Émis quand l'indicateur de synchronisation change.</div></div>
+<div class="ttc" id="aclassVanne_html_ab0db79d07218dafe272710707be5203c"><div class="ttname"><a href="classVanne.html#ab0db79d07218dafe272710707be5203c">Vanne::setSynchronisee</a></div><div class="ttdeci">void setSynchronisee(bool _synchronisee)</div><div class="ttdoc">Modifie l'indicateur de synchronisation et émet synchroniseeChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:137</div></div>
+<div class="ttc" id="aclassVanne_html_ab32b41117a602d637de495be7bddeae6"><div class="ttname"><a href="classVanne.html#ab32b41117a602d637de495be7bddeae6">Vanne::modeChanged</a></div><div class="ttdeci">void modeChanged()</div><div class="ttdoc">Émis quand le mode change.</div></div>
+<div class="ttc" id="aclassVanne_html_ab4db65466b73aa29a7f0bb737de8b779"><div class="ttname"><a href="classVanne.html#ab4db65466b73aa29a7f0bb737de8b779">Vanne::getEtat</a></div><div class="ttdeci">bool getEtat() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:27</div></div>
+<div class="ttc" id="aclassVanne_html_ab87533409ecbed1c34b30d74d21ef22d"><div class="ttname"><a href="classVanne.html#ab87533409ecbed1c34b30d74d21ef22d">Vanne::setProgrammeState</a></div><div class="ttdeci">void setProgrammeState(PROGRAM_STATE _state)</div><div class="ttdoc">Modifie l'état de programmation et émet programmeStateChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:92</div></div>
+<div class="ttc" id="aclassVanne_html_ac102ae0c4eda76aff5f846df11dc5a7d"><div class="ttname"><a href="classVanne.html#ac102ae0c4eda76aff5f846df11dc5a7d">Vanne::duree</a></div><div class="ttdeci">int duree</div><div class="ttdef"><b>Definition</b> vanne.h:44</div></div>
+<div class="ttc" id="aclassVanne_html_ac1180aeab34f2e54f414197235f4d823"><div class="ttname"><a href="classVanne.html#ac1180aeab34f2e54f414197235f4d823">Vanne::getMode</a></div><div class="ttdeci">MODE getMode() const</div><div class="ttdef"><b>Definition</b> vanne.cpp:32</div></div>
+<div class="ttc" id="aclassVanne_html_ac3437954aa2393e3c10c2f1967ad593d"><div class="ttname"><a href="classVanne.html#ac3437954aa2393e3c10c2f1967ad593d">Vanne::programmeState</a></div><div class="ttdeci">PROGRAM_STATE programmeState</div><div class="ttdef"><b>Definition</b> vanne.h:41</div></div>
+<div class="ttc" id="aclassVanne_html_ac661ef2151f491ed17e01fe5aaefd9d1"><div class="ttname"><a href="classVanne.html#ac661ef2151f491ed17e01fe5aaefd9d1">Vanne::suspendreProgramme</a></div><div class="ttdeci">Q_INVOKABLE void suspendreProgramme()</div><div class="ttdoc">Suspend la programmation sans changer le mode (raccourci pour setProgrammeState(Suspendu)).</div><div class="ttdef"><b>Definition</b> vanne.cpp:165</div></div>
+<div class="ttc" id="aclassVanne_html_acf1ba4ec742bb3a86fd984585697d558"><div class="ttname"><a href="classVanne.html#acf1ba4ec742bb3a86fd984585697d558">Vanne::setFrequence</a></div><div class="ttdeci">void setFrequence(int _frequence)</div><div class="ttdoc">Modifie la fréquence programmée et émet frequenceChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:128</div></div>
+<div class="ttc" id="aclassVanne_html_acf70de1fa615a217ce16361c851f22e6"><div class="ttname"><a href="classVanne.html#acf70de1fa615a217ce16361c851f22e6">Vanne::debut</a></div><div class="ttdeci">QDateTime debut</div><div class="ttdef"><b>Definition</b> vanne.h:43</div></div>
+<div class="ttc" id="aclassVanne_html_ad070e023de6b955e853c9fbb5f0a89fe"><div class="ttname"><a href="classVanne.html#ad070e023de6b955e853c9fbb5f0a89fe">Vanne::etatChanged</a></div><div class="ttdeci">void etatChanged()</div><div class="ttdoc">Émis quand l'état ouvert/fermé change.</div></div>
+<div class="ttc" id="aclassVanne_html_ad0d84ca2c9791bf9269486cc62383d26"><div class="ttname"><a href="classVanne.html#ad0d84ca2c9791bf9269486cc62383d26">Vanne::programmeStateChanged</a></div><div class="ttdeci">void programmeStateChanged()</div><div class="ttdoc">Émis quand l'état d'activation de la programmation change.</div></div>
+<div class="ttc" id="aclassVanne_html_adbf5b4591e2ea60ec40a010a223b0e4a"><div class="ttname"><a href="classVanne.html#adbf5b4591e2ea60ec40a010a223b0e4a">Vanne::setEtat</a></div><div class="ttdeci">void setEtat(bool _etat)</div><div class="ttdoc">Modifie l'état ouvert/fermé et émet etatChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:74</div></div>
+<div class="ttc" id="aclassVanne_html_add594c51bc7db10363dce4659f10272c"><div class="ttname"><a href="classVanne.html#add594c51bc7db10363dce4659f10272c">Vanne::passerEnManuel</a></div><div class="ttdeci">Q_INVOKABLE void passerEnManuel()</div><div class="ttdoc">Passe en mode Manuel (raccourci pour setMode(Manuel)).</div><div class="ttdef"><b>Definition</b> vanne.cpp:176</div></div>
+<div class="ttc" id="aclassVanne_html_ae6f41230c66988adad922f0b3783e711"><div class="ttname"><a href="classVanne.html#ae6f41230c66988adad922f0b3783e711">Vanne::MODE</a></div><div class="ttdeci">MODE</div><div class="ttdoc">Mode de fonctionnement d'une vanne.</div><div class="ttdef"><b>Definition</b> vanne.h:51</div></div>
+<div class="ttc" id="aclassVanne_html_ae6f41230c66988adad922f0b3783e711a03006e3dc2e0788707e3ada2ac80a77a"><div class="ttname"><a href="classVanne.html#ae6f41230c66988adad922f0b3783e711a03006e3dc2e0788707e3ada2ac80a77a">Vanne::Automatique</a></div><div class="ttdeci">@ Automatique</div><div class="ttdoc">Réservé pour une logique d'arrosage automatisée au-delà de la simple programmation horaire.</div><div class="ttdef"><b>Definition</b> vanne.h:54</div></div>
+<div class="ttc" id="aclassVanne_html_ae6f41230c66988adad922f0b3783e711a4fdb8b2fc8dab93b9bcbf8299a117a75"><div class="ttname"><a href="classVanne.html#ae6f41230c66988adad922f0b3783e711a4fdb8b2fc8dab93b9bcbf8299a117a75">Vanne::Manuel</a></div><div class="ttdeci">@ Manuel</div><div class="ttdoc">La vanne n'obéit qu'aux commandes explicites d'ouverture/fermeture ; la programmation est suspendue.</div><div class="ttdef"><b>Definition</b> vanne.h:52</div></div>
+<div class="ttc" id="aclassVanne_html_ae6f41230c66988adad922f0b3783e711ade69cc72f38940f8231de96ac26fa837"><div class="ttname"><a href="classVanne.html#ae6f41230c66988adad922f0b3783e711ade69cc72f38940f8231de96ac26fa837">Vanne::Programme</a></div><div class="ttdeci">@ Programme</div><div class="ttdoc">La vanne s'ouvre/se ferme automatiquement selon l'heure, la durée et la fréquence programmées.</div><div class="ttdef"><b>Definition</b> vanne.h:53</div></div>
+<div class="ttc" id="aclassVanne_html_aeb4f8c57ba5cef76b70ea3739e7cbcfb"><div class="ttname"><a href="classVanne.html#aeb4f8c57ba5cef76b70ea3739e7cbcfb">Vanne::setNom</a></div><div class="ttdeci">void setNom(const QString &amp;_nom)</div><div class="ttdoc">Modifie le nom affiché et émet nomChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:101</div></div>
+<div class="ttc" id="aclassVanne_html_af2f7f687329cea5981d628d621af8103"><div class="ttname"><a href="classVanne.html#af2f7f687329cea5981d628d621af8103">Vanne::setDuree</a></div><div class="ttdeci">void setDuree(int _duree)</div><div class="ttdoc">Modifie la durée programmée et émet dureeChanged() si la valeur change.</div><div class="ttdef"><b>Definition</b> vanne.cpp:119</div></div>
+<div class="ttc" id="aclassVanne_html_aff5382ef3a6acf4275d970f0a726e454"><div class="ttname"><a href="classVanne.html#aff5382ef3a6acf4275d970f0a726e454">Vanne::frequenceChanged</a></div><div class="ttdeci">void frequenceChanged()</div><div class="ttdoc">Émis quand la fréquence programmée change.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d056b70483b5c9fa9f4528b2cb79b3ef.html">ControleurArrosage</a></li><li class="navelem"><a class="el" href="vanne_8h.html">vanne.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

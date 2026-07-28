@@ -1,0 +1,15 @@
+<map id="ControleurArrosage/communicationesp32.cpp" name="ControleurArrosage/communicationesp32.cpp">
+<area shape="rect" id="Node000001" title="Implémentation de CommunicationESP32." alt="" coords="199,5,393,45"/>
+<area shape="rect" id="Node000002" href="$communicationesp32_8h.html" title="Client WebSocket bas niveau vers le boîtier ESP32." alt="" coords="209,93,383,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="299,46,299,79,293,79,293,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,80,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,121,94,166,93,161,255,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="105,167,207,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="275,121,192,163,190,158,272,116"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="231,167,361,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="299,119,299,153,293,153,293,119"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="385,167,455,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="317,116,389,157,387,162,315,121"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="480,167,531,192"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="330,116,468,162,466,167,329,121"/>
+</map>

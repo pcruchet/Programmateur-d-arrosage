@@ -1,0 +1,13 @@
+<map id="BoitierCommandeArrosage/lib/ServeurWebSocket/ServeurWebSocket.h" name="BoitierCommandeArrosage/lib/ServeurWebSocket/ServeurWebSocket.h">
+<area shape="rect" id="Node000001" title="Serveur WebSocket exposant l&#39;API de pilotage du boîtier d&#39;arrosage à l&#39;application Qt/QML." alt="" coords="385,5,584,60"/>
+<area shape="rect" id="Node000002" href="$BoitierPilotageArrosage_8h.html" title="Automate d&#39;états principal du boîtier de commande d&#39;arrosage." alt="" coords="118,115,361,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,68,286,118,284,113,407,63"/>
+<area shape="rect" id="Node000005" href="$ServeurWebSocket_8cpp.html" title="Implémentation du serveur WebSocket mono&#45;client (WiFi STA/AP, relais des messages,..." alt="" coords="385,108,584,163"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="487,74,487,108,482,108,482,74"/>
+<area shape="rect" id="Node000006" href="$test__ServeurWebSocket_8cpp.html" title=" " alt="" coords="609,108,817,163"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="558,63,654,106,652,110,555,68"/>
+<area shape="rect" id="Node000003" href="$BoitierPilotageArrosage_8cpp.html" title="Implémentation de l&#39;automate d&#39;états BoitierPilotageArrosage." alt="" coords="5,211,236,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,166,146,213,143,209,203,162"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Point d&#39;entrée Arduino du firmware (setup()/loop())." alt="" coords="260,211,459,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="276,162,337,208,333,213,273,166"/>
+</map>

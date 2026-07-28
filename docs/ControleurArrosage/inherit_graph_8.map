@@ -1,0 +1,7 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,100,56"/>
+<area shape="rect" id="Node000001" href="$classEntetePage.html" title="QML Component : En&#45;tête de page standard : bouton retour + titre." alt="" coords="148,5,243,31"/>
+<area shape="poly" id="edge12_Node000000_Node000001" title=" " alt="" coords="113,30,147,24,148,29,114,35"/>
+<area shape="rect" id="Node000002" href="$classTitre.html" title="QML Component : Motif &quot;icône + libellé en gras&quot;, utilisé comme sous&#45;titre de section." alt="" coords="169,55,221,80"/>
+<area shape="poly" id="edge13_Node000000_Node000002" title=" " alt="" coords="114,51,169,60,169,66,113,56"/>
+</map>

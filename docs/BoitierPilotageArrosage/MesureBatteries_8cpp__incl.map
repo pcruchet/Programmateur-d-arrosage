@@ -1,0 +1,14 @@
+<map id="BoitierCommandeArrosage/lib/MesureBatteries/MesureBatteries.cpp" name="BoitierCommandeArrosage/lib/MesureBatteries/MesureBatteries.cpp">
+<area shape="rect" id="Node000001" title="Implémentation du pilote INA219 pour la surveillance du pack batterie." alt="" coords="5,5,296,45"/>
+<area shape="rect" id="Node000002" href="$MesureBatteries_8h.html" title="Mesure de tension/courant/puissance du pack batterie via le capteur INA219, et estimation du niveau d..." alt="" coords="80,93,221,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,46,153,79,148,79,148,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="141,240,225,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="115,121,85,134,58,150,43,170,42,180,46,191,62,209,82,222,128,240,126,245,80,227,59,213,42,193,36,180,38,168,54,146,82,129,113,116"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="56,167,120,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="142,121,109,158,105,154,138,117"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="145,167,285,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="163,117,197,155,193,158,159,121"/>
+<area shape="rect" id="Node000006" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="309,167,385,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="183,116,303,159,301,164,181,121"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="321,194,223,237,221,232,319,190"/>
+</map>

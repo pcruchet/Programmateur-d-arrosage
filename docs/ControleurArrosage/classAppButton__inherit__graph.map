@@ -1,0 +1,5 @@
+<map id="AppButton" name="AppButton">
+<area shape="rect" id="Node000001" title="QML Component : Bouton stylé de l&#39;application (variantes primaire/secondaire)." alt="" coords="5,79,96,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="18,5,83,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,44,53,79,48,79,48,44"/>
+</map>

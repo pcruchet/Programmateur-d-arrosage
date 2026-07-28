@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmateur d'arrosage — Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 720px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 0.25rem;
+        }
+        p.subtitle {
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 2.5rem;
+        }
+        .card {
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+        .card:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .card h2 {
+            margin: 0 0 0.35rem 0;
+            font-size: 1.15rem;
+            color: #1E88E5;
+        }
+        .card p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>Programmateur d'arrosage</h1>
+    <p class="subtitle">Documentation technique du projet (générée avec Doxygen)</p>
+
+    <a class="card" href="BoitierPilotageArrosage/index.html">
+        <h2>BoitierPilotageArrosage</h2>
+        <p>Firmware ESP32 (PlatformIO / C++ Arduino) : automate d'états, pilotage des électrovannes,
+           communication WebSocket, RTC, stockage NVS.</p>
+    </a>
+
+    <a class="card" href="ControleurArrosage/index.html">
+        <h2>ControleurArrosage</h2>
+        <p>Application Qt/QML : interface de pilotage des vannes, programmation de l'arrosage,
+           communication avec le boîtier ESP32.</p>
+    </a>
+
+    <footer>Dépôt : <a href="https://github.com/pcruchet/Programmateur-d-arrosage">pcruchet/Programmateur-d-arrosage</a></footer>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contrôleur d&#39;Arrosage:  Fichier source de ControleurArrosage/controleurarrosage.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Contrôleur d&#39;Arrosage
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('controleurarrosage_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">controleurarrosage.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="controleurarrosage_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifndef CONTROLEURARROSAGE_H</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define CONTROLEURARROSAGE_H</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;QAbstractListModel&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;QSettings&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;QStandardPaths&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;QDir&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="vanne_8h.html">vanne.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="communicationesp32_8h.html">communicationesp32.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="protocolearrosageclient_8h.html">protocolearrosageclient.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classControleurArrosage.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="classControleurArrosage.html">ControleurArrosage</a> : <span class="keyword">public</span> QAbstractListModel</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    Q_OBJECT</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a396f4085c31699762ce8ac2ab3384869">   51</a></span>    Q_PROPERTY(<span class="keywordtype">bool</span> connecte READ estConnecte NOTIFY connecteChanged)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#aae66f51e50111c0b522e67b796b39496">   52</a></span>    Q_PROPERTY(<span class="keywordtype">bool</span> enConnexion READ estEnConnexion NOTIFY enConnexionChanged)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a7b0242c54cfe0c0c27eacd37655a543c">   53</a></span>    Q_PROPERTY(QString adresseIp READ getAdresseIp WRITE setAdresseIp NOTIFY adresseIpChanged)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#aa5dc3ababe750475240ade9b457d6da0">   54</a></span>    Q_PROPERTY(quint16 port READ getPort WRITE setPort NOTIFY portChanged)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>public:</div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="};">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43">   59</a></span>    enum <a class="code hl_enumeration" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43">Roles</a> {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a0d751816fbdcd762aacb998b08e44b8c">   60</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a0d751816fbdcd762aacb998b08e44b8c">EtatRole</a> = Qt::UserRole + 1, </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a508749ba42e43ecd11b59d6e82d385c1">   61</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a508749ba42e43ecd11b59d6e82d385c1">ModeRole</a>,                    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a1b7ad4c85868cc121884192d401d5e99">   62</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a1b7ad4c85868cc121884192d401d5e99">ProgrammeStateRole</a>,          </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43ace07f2195b9d85109f4693b41c169420">   63</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43ace07f2195b9d85109f4693b41c169420">NomRole</a>,                     </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43abe309761aeedd490be8e9af414a7cbf5">   64</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43abe309761aeedd490be8e9af414a7cbf5">DebutRole</a>,                   </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a37e9d5b3fe714e141cdbc746fb1bd150">   65</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a37e9d5b3fe714e141cdbc746fb1bd150">DureeRole</a>,                   </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a98257d23ad2c15a3358313b126e92010">   66</a></span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a98257d23ad2c15a3358313b126e92010">FrequenceRole</a>,               </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_enumvalue" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a1d44ded4878c6a6b6797461ea115bb2d">SynchroniseeRole</a>             </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a1d44ded4878c6a6b6797461ea115bb2d">   68</a></span>    };</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classControleurArrosage.html">ControleurArrosage</a>(<span class="keywordtype">int</span> _nbVannes = 4, QObject *_parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// ================= MODÈLE QML =================</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">int</span> rowCount(<span class="keyword">const</span> QModelIndex &amp;_parent = QModelIndex()) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    QVariant data(<span class="keyword">const</span> QModelIndex &amp;_index, <span class="keywordtype">int</span> _role) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    QHash&lt;int, QByteArray&gt; roleNames() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">bool</span> estConnecte() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">bool</span> estEnConnexion() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// ================= ACTIONS QML =================</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    Q_INVOKABLE <span class="keywordtype">void</span> toggleEtat(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    Q_INVOKABLE <span class="keywordtype">void</span> passerEnManuel(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    Q_INVOKABLE <span class="keywordtype">void</span> activerProgramme(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    Q_INVOKABLE <span class="keywordtype">void</span> activerAutomatique(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    Q_INVOKABLE <span class="keywordtype">void</span> suspendProgramme(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    Q_INVOKABLE <span class="keywordtype">void</span> resumeProgramme(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    Q_INVOKABLE <span class="keywordtype">void</span> setDuree(<span class="keywordtype">int</span> _index, <span class="keywordtype">int</span> _duree);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    Q_INVOKABLE <span class="keywordtype">void</span> setFrequence(<span class="keywordtype">int</span> _index, <span class="keywordtype">int</span> _frequence);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    Q_INVOKABLE <span class="keywordtype">void</span> setDebut(<span class="keywordtype">int</span> _index, <span class="keyword">const</span> QString &amp;_debut);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    Q_INVOKABLE <span class="keywordtype">void</span> envoyerProgrammation(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    Q_INVOKABLE <span class="keywordtype">void</span> definirHeureSysteme(<span class="keyword">const</span> QString &amp;_dateHeureIso);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    Q_INVOKABLE <span class="keywordtype">void</span> rafraichir(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    Q_INVOKABLE QVariant vanne(<span class="keywordtype">int</span> _index);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    Q_INVOKABLE <span class="keywordtype">void</span> configurerConnexion();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    QString getAdresseIp() <span class="keyword">const</span>;                        </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordtype">void</span> setAdresseIp(<span class="keyword">const</span> QString &amp;_newAdresseIp);      </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    quint16 getPort() <span class="keyword">const</span>;                              </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">void</span> setPort(quint16 _newPort);                       </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>signals:</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#ac6e57e6db72aca83bd87385af78407a6">  193</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classControleurArrosage.html#ac6e57e6db72aca83bd87385af78407a6">connecteChanged</a>();                        </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a757025cc51282fa970d2fbb8c38f813b">  194</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classControleurArrosage.html#a757025cc51282fa970d2fbb8c38f813b">enConnexionChanged</a>();                      </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a530664c10cf47f292e14941c7ac6683c">  195</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classControleurArrosage.html#a530664c10cf47f292e14941c7ac6683c">erreurRecue</a>(<span class="keyword">const</span> QString &amp;_message);      </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a4075ba02c423b2648ab2a61e8eff862b">  196</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classControleurArrosage.html#a4075ba02c423b2648ab2a61e8eff862b">adresseIpChanged</a>();                        </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classControleurArrosage.html#a96cfd25e1140856d77667eeab565541d">  197</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classControleurArrosage.html#a96cfd25e1140856d77667eeab565541d">portChanged</a>();                             </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="comment">// ============ RÉCEPTION ESP32 ============</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">void</span> traiterMessage(<span class="keyword">const</span> QString &amp;_message);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordtype">void</span> onConnexionEtablie();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordtype">void</span> onConnexionPerdue();</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordtype">void</span> onErreurCommunication(<span class="keyword">const</span> QString &amp;_erreur);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">void</span> onEnConnexionChanged();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="comment">// Configuration de l&#39;application</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    QString cheminConfig() <span class="keyword">const</span>;         </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordtype">void</span> chargerConfiguration();          </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordtype">void</span> sauvegarderConfiguration();      </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordtype">void</span> reconstruireUrl();               </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="comment">// Accès aux vannes</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_class" href="classVanne.html">Vanne</a>* get(<span class="keywordtype">int</span> _index) <span class="keyword">const</span>;              </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_class" href="classVanne.html">Vanne</a>* getParId(<span class="keywordtype">int</span> _id) <span class="keyword">const</span>;            </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">int</span> indexParId(<span class="keywordtype">int</span> _id) <span class="keyword">const</span>;             </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordtype">void</span> notifyRowChanged(<span class="keywordtype">int</span> _index);         </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">// Émission</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordtype">void</span> envoyerTrame(<span class="keyword">const</span> QByteArray &amp;_trame);   </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordtype">void</span> envoyerMode(<a class="code hl_class" href="classVanne.html">Vanne</a> *_v);                   </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">void</span> synchroniserVannes();                     </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keywordtype">void</span> tenterReconnexion();                      </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="comment">// Réception : dispatch par type de trame</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordtype">void</span> traiterDonneesVanne(<span class="keyword">const</span> QJsonObject &amp;_trame);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">void</span> traiterEtatSysteme(<span class="keyword">const</span> QJsonObject &amp;_trame);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordtype">void</span> traiterErreur(<span class="keyword">const</span> QJsonObject &amp;_trame);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keyword">static</span> <span class="keywordtype">char</span> modeVersProtocole(<a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">Vanne::MODE</a> _mode);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keyword">static</span> <a class="code hl_enumeration" href="classVanne.html#ae6f41230c66988adad922f0b3783e711">Vanne::MODE</a> protocoleVersMode(<span class="keywordtype">char</span> _mode);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    QVector&lt;Vanne*&gt; m_vannes;              </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <a class="code hl_class" href="classCommunicationESP32.html">CommunicationESP32</a> com;                </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_class" href="classProtocoleArrosageClient.html">ProtocoleArrosageClient</a> protocole;     </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordtype">bool</span> <a class="code hl_property" href="classControleurArrosage.html#a396f4085c31699762ce8ac2ab3384869">connecte</a>;                         </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    QTimer timerReconnexion;               </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    QUrl derniereUrl;                      </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    QString <a class="code hl_property" href="classControleurArrosage.html#a7b0242c54cfe0c0c27eacd37655a543c">adresseIp</a>;                     </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    quint16 <a class="code hl_property" href="classControleurArrosage.html#aa5dc3ababe750475240ade9b457d6da0">port</a>;                          </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>};</div>
+</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">#endif </span><span class="comment">// CONTROLEURARROSAGE_H</span></div>
+<div class="ttc" id="aclassCommunicationESP32_html"><div class="ttname"><a href="classCommunicationESP32.html">CommunicationESP32</a></div><div class="ttdoc">Classe C++ : Encapsule la connexion WebSocket vers le boîtier ESP32.</div><div class="ttdef"><b>Definition</b> communicationesp32.h:36</div></div>
+<div class="ttc" id="aclassControleurArrosage_html"><div class="ttname"><a href="classControleurArrosage.html">ControleurArrosage</a></div><div class="ttdoc">Classe C++ : Orchestrateur central de l'application.</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:49</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a396f4085c31699762ce8ac2ab3384869"><div class="ttname"><a href="classControleurArrosage.html#a396f4085c31699762ce8ac2ab3384869">ControleurArrosage::connecte</a></div><div class="ttdeci">bool connecte</div><div class="ttdoc">État de connexion courant (voir estConnecte()/connecteChanged()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:51</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a4075ba02c423b2648ab2a61e8eff862b"><div class="ttname"><a href="classControleurArrosage.html#a4075ba02c423b2648ab2a61e8eff862b">ControleurArrosage::adresseIpChanged</a></div><div class="ttdeci">void adresseIpChanged()</div><div class="ttdoc">Émis quand l'adresse IP configurée change.</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a530664c10cf47f292e14941c7ac6683c"><div class="ttname"><a href="classControleurArrosage.html#a530664c10cf47f292e14941c7ac6683c">ControleurArrosage::erreurRecue</a></div><div class="ttdeci">void erreurRecue(const QString &amp;_message)</div><div class="ttdoc">Émis à réception d'une erreur applicative ou de communication, avec un message lisible.</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a757025cc51282fa970d2fbb8c38f813b"><div class="ttname"><a href="classControleurArrosage.html#a757025cc51282fa970d2fbb8c38f813b">ControleurArrosage::enConnexionChanged</a></div><div class="ttdeci">void enConnexionChanged()</div><div class="ttdoc">Émis quand l'état &quot;connexion en cours&quot; change.</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a7b0242c54cfe0c0c27eacd37655a543c"><div class="ttname"><a href="classControleurArrosage.html#a7b0242c54cfe0c0c27eacd37655a543c">ControleurArrosage::adresseIp</a></div><div class="ttdeci">QString adresseIp</div><div class="ttdoc">Adresse IP configurée du boîtier (persistée).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:53</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a96cfd25e1140856d77667eeab565541d"><div class="ttname"><a href="classControleurArrosage.html#a96cfd25e1140856d77667eeab565541d">ControleurArrosage::portChanged</a></div><div class="ttdeci">void portChanged()</div><div class="ttdoc">Émis quand le port configuré change.</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43">ControleurArrosage::Roles</a></div><div class="ttdeci">Roles</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:59</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43a0d751816fbdcd762aacb998b08e44b8c"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a0d751816fbdcd762aacb998b08e44b8c">ControleurArrosage::EtatRole</a></div><div class="ttdeci">@ EtatRole</div><div class="ttdoc">bool : état ouvert/fermé (Vanne::getEtat()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:60</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43a1b7ad4c85868cc121884192d401d5e99"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a1b7ad4c85868cc121884192d401d5e99">ControleurArrosage::ProgrammeStateRole</a></div><div class="ttdeci">@ ProgrammeStateRole</div><div class="ttdoc">Vanne::PROGRAM_STATE : activation de la programmation (Vanne::getProgrammeState()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:62</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43a1d44ded4878c6a6b6797461ea115bb2d"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a1d44ded4878c6a6b6797461ea115bb2d">ControleurArrosage::SynchroniseeRole</a></div><div class="ttdeci">@ SynchroniseeRole</div><div class="ttdoc">bool : état confirmé par l'ESP32 (Vanne::estSynchronisee()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:67</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43a37e9d5b3fe714e141cdbc746fb1bd150"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a37e9d5b3fe714e141cdbc746fb1bd150">ControleurArrosage::DureeRole</a></div><div class="ttdeci">@ DureeRole</div><div class="ttdoc">int : durée programmée en minutes (Vanne::getDuree()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:65</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43a508749ba42e43ecd11b59d6e82d385c1"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a508749ba42e43ecd11b59d6e82d385c1">ControleurArrosage::ModeRole</a></div><div class="ttdeci">@ ModeRole</div><div class="ttdoc">Vanne::MODE : mode courant (Vanne::getMode()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:61</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43a98257d23ad2c15a3358313b126e92010"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43a98257d23ad2c15a3358313b126e92010">ControleurArrosage::FrequenceRole</a></div><div class="ttdeci">@ FrequenceRole</div><div class="ttdoc">int : fréquence programmée en heures (Vanne::getFrequence()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:66</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43abe309761aeedd490be8e9af414a7cbf5"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43abe309761aeedd490be8e9af414a7cbf5">ControleurArrosage::DebutRole</a></div><div class="ttdeci">@ DebutRole</div><div class="ttdoc">QDateTime : heure de début programmée (Vanne::getDebut()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:64</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_a9ea603f7e2e7ecd005396b94794fad43ace07f2195b9d85109f4693b41c169420"><div class="ttname"><a href="classControleurArrosage.html#a9ea603f7e2e7ecd005396b94794fad43ace07f2195b9d85109f4693b41c169420">ControleurArrosage::NomRole</a></div><div class="ttdeci">@ NomRole</div><div class="ttdoc">QString : nom affiché (Vanne::getNom()).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:63</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_aa5dc3ababe750475240ade9b457d6da0"><div class="ttname"><a href="classControleurArrosage.html#aa5dc3ababe750475240ade9b457d6da0">ControleurArrosage::port</a></div><div class="ttdeci">quint16 port</div><div class="ttdoc">Port WebSocket configuré du boîtier (persisté).</div><div class="ttdef"><b>Definition</b> controleurarrosage.h:54</div></div>
+<div class="ttc" id="aclassControleurArrosage_html_ac6e57e6db72aca83bd87385af78407a6"><div class="ttname"><a href="classControleurArrosage.html#ac6e57e6db72aca83bd87385af78407a6">ControleurArrosage::connecteChanged</a></div><div class="ttdeci">void connecteChanged()</div><div class="ttdoc">Émis quand l'état de connexion (connecte) change.</div></div>
+<div class="ttc" id="aclassProtocoleArrosageClient_html"><div class="ttname"><a href="classProtocoleArrosageClient.html">ProtocoleArrosageClient</a></div><div class="ttdoc">Classe C++ : Encodage / décodage des trames JSON du protocole &quot;Contrôleur d'Arrosage&quot; v1....</div><div class="ttdef"><b>Definition</b> protocolearrosageclient.h:37</div></div>
+<div class="ttc" id="aclassVanne_html"><div class="ttname"><a href="classVanne.html">Vanne</a></div><div class="ttdoc">Classe C++ : Image logicielle d'une électrovanne réelle.</div><div class="ttdef"><b>Definition</b> vanne.h:34</div></div>
+<div class="ttc" id="aclassVanne_html_ae6f41230c66988adad922f0b3783e711"><div class="ttname"><a href="classVanne.html#ae6f41230c66988adad922f0b3783e711">Vanne::MODE</a></div><div class="ttdeci">MODE</div><div class="ttdoc">Mode de fonctionnement d'une vanne.</div><div class="ttdef"><b>Definition</b> vanne.h:51</div></div>
+<div class="ttc" id="acommunicationesp32_8h_html"><div class="ttname"><a href="communicationesp32_8h.html">communicationesp32.h</a></div><div class="ttdoc">Client WebSocket bas niveau vers le boîtier ESP32.</div></div>
+<div class="ttc" id="aprotocolearrosageclient_8h_html"><div class="ttname"><a href="protocolearrosageclient_8h.html">protocolearrosageclient.h</a></div><div class="ttdoc">Encodage / décodage du protocole applicatif JSON, côté client Qt.</div></div>
+<div class="ttc" id="avanne_8h_html"><div class="ttname"><a href="vanne_8h.html">vanne.h</a></div><div class="ttdoc">Image logicielle d'une électrovanne, côté application Qt/QML.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d056b70483b5c9fa9f4528b2cb79b3ef.html">ControleurArrosage</a></li><li class="navelem"><a class="el" href="controleurarrosage_8h.html">controleurarrosage.h</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

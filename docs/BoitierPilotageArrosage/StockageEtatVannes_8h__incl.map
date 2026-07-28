@@ -1,0 +1,10 @@
+<map id="BoitierCommandeArrosage/lib/StockageEtatVannes/StockageEtatVannes.h" name="BoitierCommandeArrosage/lib/StockageEtatVannes/StockageEtatVannes.h">
+<area shape="rect" id="Node000001" title="Persistance NVS de l&#39;état physique (ouverte/fermée) de chacune des 4 vannes, et détection de dépassem..." alt="" coords="5,5,204,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="75,181,159,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="70,62,54,78,41,95,35,114,39,132,57,155,80,172,77,177,53,159,34,134,30,113,36,93,50,74,66,58"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="49,108,160,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,60,107,94,102,94,102,60"/>
+<area shape="rect" id="Node000004" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="184,108,260,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,58,197,98,194,102,139,62"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="207,136,146,176,144,171,204,131"/>
+</map>

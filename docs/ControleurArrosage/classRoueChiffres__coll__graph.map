@@ -1,0 +1,5 @@
+<map id="RoueChiffres" name="RoueChiffres">
+<area shape="rect" id="Node000001" title="QML Component : Roue de sélection (Tumbler) d&#39;un nombre à deux chiffres (00 à valeurMax&#45;1)." alt="" coords="5,79,111,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="21,5,95,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,44,61,79,55,79,55,44"/>
+</map>

@@ -1,0 +1,68 @@
+<map id="BoitierCommandeArrosage/include/BoitierPilotageArrosage.h" name="BoitierCommandeArrosage/include/BoitierPilotageArrosage.h">
+<area shape="rect" id="Node000001" title="Automate d&#39;états principal du boîtier de commande d&#39;arrosage." alt="" coords="741,5,984,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="1038,387,1122,412"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="984,27,1163,35,1362,47,1532,65,1592,77,1626,91,1643,110,1651,130,1653,178,1653,254,1647,287,1631,309,1606,325,1574,341,1538,355,1489,366,1369,383,1241,393,1136,399,1136,393,1241,388,1368,378,1489,361,1537,350,1572,336,1603,320,1627,305,1643,284,1648,254,1648,178,1646,131,1639,113,1622,96,1590,82,1532,71,1361,52,1163,40,984,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,313,69,339"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="742,33,653,39,552,51,446,69,343,96,256,121,187,144,157,159,127,179,97,206,65,242,50,270,42,300,37,299,45,268,60,238,93,202,124,175,154,155,185,139,254,116,342,91,445,64,551,46,652,34,741,27"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="413,93,512,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="767,48,526,95,525,90,766,43"/>
+<area shape="rect" id="Node000005" href="$AfficheurOLED_8h.html" title="Pilotage de l&#39;écran OLED SSD1306 : affichage du statut réseau, de la connexion client,..." alt="" coords="638,167,765,192"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="841,47,786,95,723,158,719,154,782,91,838,43"/>
+<area shape="rect" id="Node000007" href="$MesureBatteries_8h.html" title="Mesure de tension/courant/puissance du pack batterie via le capteur INA219, et estimation du niveau d..." alt="" coords="75,240,216,265"/>
+<area shape="poly" id="edge39_Node000001_Node000007" title=" " alt="" coords="741,33,664,40,577,52,488,70,402,96,334,127,269,164,172,233,169,229,266,160,331,122,400,91,487,65,577,47,663,35,741,28"/>
+<area shape="rect" id="Node000009" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="873,313,949,339"/>
+<area shape="poly" id="edge42_Node000001_Node000009" title=" " alt="" coords="854,47,844,69,836,94,836,118,849,170,866,221,901,300,896,302,861,223,844,172,831,119,831,93,839,67,849,45"/>
+<area shape="rect" id="Node000010" href="$ServeurWebSocket_8h.html" title="Serveur WebSocket exposant l&#39;API de pilotage du boîtier d&#39;arrosage à l&#39;application Qt/QML." alt="" coords="845,93,1000,119"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="879,44,908,81,903,84,875,47"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="1219,167,1301,192"/>
+<area shape="poly" id="edge43_Node000001_Node000013" title=" " alt="" coords="913,43,1218,159,1216,164,911,48"/>
+<area shape="rect" id="Node000014" href="$ProtocoleArrosageServeur_8h.html" title="Encodage/décodage des trames JSON du protocole applicatif &quot;Contrôleur d&#39;Arrosage&quot; (WebSocket,..." alt="" coords="1024,240,1227,265"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="973,43,1071,64,1173,91,1260,125,1292,144,1314,165,1321,179,1322,192,1316,204,1306,214,1276,229,1237,240,1235,235,1274,224,1303,209,1312,201,1317,191,1316,181,1310,168,1289,149,1258,130,1171,96,1070,69,972,48"/>
+<area shape="rect" id="Node000016" href="$Vanne_8h.html" title="Pilotage physique d&#39;une électrovanne bistable via un pont en H partagé (L298), multiplexé par une bro..." alt="" coords="1435,240,1509,265"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="984,27,1053,34,1127,46,1203,64,1276,91,1331,121,1381,159,1454,228,1451,232,1377,163,1328,126,1274,96,1201,70,1126,51,1052,39,984,33"/>
+<area shape="rect" id="Node000018" href="$StockageProgrammationVannes_8h.html" title="Persistance NVS de la programmation (mode, heure, durée, fréquence) de chacune des 4 vannes." alt="" coords="241,240,482,265"/>
+<area shape="poly" id="edge27_Node000001_Node000018" title=" " alt="" coords="805,48,677,96,518,171,395,236,393,231,515,166,675,91,803,43"/>
+<area shape="rect" id="Node000020" href="$StockageEtatVannes_8h.html" title="Persistance NVS de l&#39;état physique (ouverte/fermée) de chacune des 4 vannes, et détection de dépassem..." alt="" coords="506,240,673,265"/>
+<area shape="poly" id="edge31_Node000001_Node000020" title=" " alt="" coords="813,48,769,68,719,95,670,128,627,168,609,197,598,228,593,226,604,195,623,165,667,124,717,90,766,63,811,43"/>
+<area shape="rect" id="Node000021" href="$GestionnaireTemps_8h.html" title="Interface avec le RTC DS3231 : heure système, calcul de planification et gestion de l&#39;alarme de révei..." alt="" coords="1251,240,1410,265"/>
+<area shape="poly" id="edge35_Node000001_Node000021" title=" " alt="" coords="985,34,1102,55,1164,70,1224,91,1290,116,1315,134,1337,165,1343,181,1344,197,1341,227,1336,226,1339,197,1337,182,1332,168,1311,138,1287,121,1222,96,1163,75,1101,60,984,40"/>
+<area shape="rect" id="Node000023" href="$BoutonPoussoir_8h.html" title="Lecture anti&#45;rebond d&#39;un bouton poussoir actif à l&#39;état bas, par scrutation (à appeler régulièrement ..." alt="" coords="1478,93,1613,119"/>
+<area shape="poly" id="edge40_Node000001_Node000023" title=" " alt="" coords="985,37,1459,91,1464,91,1464,97,1458,96,984,42"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="697,240,847,265"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="715,190,753,228,749,232,711,194"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="638,191,230,242,229,237,637,186"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="179,263,295,300,368,319,443,336,608,361,772,378,1025,394,1024,399,771,383,607,367,442,341,367,325,293,305,177,268"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="129,268,68,308,65,303,127,263"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="94,313,234,339"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="151,265,160,300,155,301,146,266"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="216,261,228,263,589,297,859,318,859,324,589,303,228,268,216,267"/>
+<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="939,336,1041,379,1039,384,937,341"/>
+<area shape="poly" id="edge13_Node000010_Node000002" title=" " alt="" coords="1001,114,1094,133,1133,147,1158,165,1164,179,1158,193,1142,210,1123,217,1084,219,1046,220,1029,227,1014,242,1001,266,998,288,1003,311,1014,337,1030,359,1050,377,1046,381,1026,363,1010,340,998,312,993,288,996,264,1010,238,1026,222,1045,215,1084,213,1122,212,1139,205,1154,191,1158,179,1154,168,1131,152,1093,138,1000,119"/>
+<area shape="poly" id="edge16_Node000010_Node000005" title=" " alt="" coords="888,121,751,165,749,160,886,116"/>
+<area shape="poly" id="edge17_Node000010_Node000009" title=" " alt="" coords="913,120,895,141,881,167,879,187,886,202,897,218,907,239,912,270,914,299,909,299,907,271,901,241,892,220,881,204,874,188,876,166,891,138,909,117"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="891,167,954,192"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="925,119,925,153,920,153,920,119"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="979,167,1144,192"/>
+<area shape="poly" id="edge15_Node000010_Node000012" title=" " alt="" coords="946,116,1028,158,1025,163,944,121"/>
+<area shape="poly" id="edge18_Node000010_Node000013" title=" " alt="" coords="977,116,1207,164,1205,169,976,121"/>
+<area shape="poly" id="edge20_Node000014_Node000002" title=" " alt="" coords="1135,264,1150,298,1153,319,1149,340,1133,363,1113,381,1110,377,1129,359,1144,338,1148,319,1145,300,1130,266"/>
+<area shape="poly" id="edge22_Node000014_Node000009" title=" " alt="" coords="1092,268,959,311,958,306,1090,263"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1025,313,1135,339"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="1120,267,1097,303,1092,300,1116,264"/>
+<area shape="poly" id="edge24_Node000016_Node000002" title=" " alt="" coords="1490,264,1507,279,1523,298,1531,319,1530,330,1525,340,1497,360,1457,375,1407,386,1351,393,1235,401,1136,402,1136,397,1234,395,1351,388,1406,380,1456,370,1495,355,1521,337,1525,329,1526,320,1519,301,1503,283,1486,268"/>
+<area shape="poly" id="edge26_Node000016_Node000009" title=" " alt="" coords="1435,265,1422,268,963,321,962,316,1421,263,1434,260"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1361,313,1511,339"/>
+<area shape="poly" id="edge25_Node000016_Node000017" title=" " alt="" coords="1468,267,1450,302,1446,300,1464,264"/>
+<area shape="poly" id="edge28_Node000018_Node000002" title=" " alt="" coords="377,263,429,301,464,320,501,336,546,348,605,358,752,374,1025,393,1024,398,751,380,605,363,545,353,499,341,462,325,426,305,374,268"/>
+<area shape="poly" id="edge30_Node000018_Node000009" title=" " alt="" coords="450,263,859,315,858,321,449,268"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="513,313,623,339"/>
+<area shape="poly" id="edge29_Node000018_Node000019" title=" " alt="" coords="395,263,522,306,521,311,394,268"/>
+<area shape="poly" id="edge32_Node000020_Node000002" title=" " alt="" coords="625,263,861,336,1025,381,1024,386,859,341,623,268"/>
+<area shape="poly" id="edge34_Node000020_Node000009" title=" " alt="" coords="642,263,860,311,858,316,640,268"/>
+<area shape="poly" id="edge33_Node000020_Node000019" title=" " alt="" coords="588,266,578,301,573,299,583,265"/>
+<area shape="poly" id="edge36_Node000021_Node000002" title=" " alt="" coords="1312,268,1113,382,1111,377,1309,263"/>
+<area shape="poly" id="edge38_Node000021_Node000009" title=" " alt="" coords="1264,268,963,319,962,313,1263,263"/>
+<area shape="rect" id="Node000022" title=" " alt="" coords="1261,313,1336,339"/>
+<area shape="poly" id="edge37_Node000021_Node000022" title=" " alt="" coords="1328,267,1312,302,1307,300,1323,265"/>
+<area shape="poly" id="edge41_Node000023_Node000002" title=" " alt="" coords="1552,118,1566,159,1577,218,1578,251,1575,283,1565,313,1547,341,1526,352,1487,362,1375,378,1136,398,1136,392,1375,373,1486,357,1524,347,1544,337,1560,311,1569,282,1573,250,1572,219,1561,160,1547,120"/>
+</map>

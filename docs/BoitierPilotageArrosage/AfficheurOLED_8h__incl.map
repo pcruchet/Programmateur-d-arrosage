@@ -1,0 +1,16 @@
+<map id="BoitierCommandeArrosage/lib/AfficheurOLED/AfficheurOLED.h" name="BoitierCommandeArrosage/lib/AfficheurOLED/AfficheurOLED.h">
+<area shape="rect" id="Node000001" title="Pilotage de l&#39;écran OLED SSD1306 : affichage du statut réseau, de la connexion client,..." alt="" coords="65,5,267,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,108,156,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,62,104,100,100,96,138,58"/>
+<area shape="rect" id="Node000003" href="$MesureBatteries_8h.html" title="Mesure de tension/courant/puissance du pack batterie via le capteur INA219, et estimation du niveau d..." alt="" coords="181,108,322,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,58,232,96,228,100,190,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="241,255,325,280"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,136,185,148,159,165,143,184,142,194,147,205,163,223,183,237,228,255,227,260,180,242,159,227,142,208,137,195,138,182,155,161,183,144,213,131"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="157,181,221,207"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="243,135,210,173,206,169,239,132"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="245,181,385,207"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="264,132,298,169,294,173,260,135"/>
+<area shape="rect" id="Node000007" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="409,181,485,207"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="284,131,403,174,402,179,282,136"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="422,209,324,252,321,247,420,204"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,80,56"/>
+<area shape="rect" id="Node000001" href="$classCommunicationESP32.html" title="Classe C++ : Encapsule la connexion WebSocket vers le boîtier ESP32." alt="" coords="128,5,293,31"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="93,33,127,28,128,33,94,38"/>
+<area shape="rect" id="Node000002" href="$classVanne.html" title="Classe C++ : Image logicielle d&#39;une électrovanne réelle." alt="" coords="179,55,242,80"/>
+<area shape="poly" id="edge5_Node000000_Node000002" title=" " alt="" coords="94,48,180,60,179,66,93,53"/>
+</map>

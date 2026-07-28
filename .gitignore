@@ -1,0 +1,2 @@
+# Fichiers de build / IDE au niveau racine du dépôt (les sous-projets ont leur propre .gitignore)
+.DS_Store

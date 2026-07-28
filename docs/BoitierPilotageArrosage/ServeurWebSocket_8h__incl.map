@@ -1,0 +1,26 @@
+<map id="BoitierCommandeArrosage/lib/ServeurWebSocket/ServeurWebSocket.h" name="BoitierCommandeArrosage/lib/ServeurWebSocket/ServeurWebSocket.h">
+<area shape="rect" id="Node000001" title="Serveur WebSocket exposant l&#39;API de pilotage du boîtier d&#39;arrosage à l&#39;application Qt/QML." alt="" coords="190,5,388,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="111,328,195,353"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,51,89,75,48,91,23,110,10,137,10,165,19,195,35,224,82,277,128,317,124,321,78,281,31,227,14,197,4,166,5,136,19,106,45,87,87,70,189,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="34,108,96,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,63,109,105,107,100,220,58"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="121,108,286,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,62,227,100,223,96,261,58"/>
+<area shape="rect" id="Node000005" href="$AfficheurOLED_8h.html" title="Pilotage de l&#39;écran OLED SSD1306 : affichage du statut réseau, de la connexion client,..." alt="" coords="311,108,438,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="317,58,355,96,351,100,313,62"/>
+<area shape="rect" id="Node000010" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="443,255,519,280"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="386,58,422,78,453,106,471,139,481,176,485,211,486,241,480,241,480,212,476,177,466,141,448,110,419,82,383,62"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="514,108,595,133"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="371,58,507,101,506,106,369,63"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="110,181,260,207"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="345,136,230,179,228,174,343,131"/>
+<area shape="rect" id="Node000007" href="$MesureBatteries_8h.html" title="Mesure de tension/courant/puissance du pack batterie via le capteur INA219, et estimation du niveau d..." alt="" coords="285,181,426,207"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="374,134,365,169,360,168,369,133"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="306,209,232,231,201,243,180,257,164,285,157,315,152,314,159,283,177,253,198,239,230,226,304,204"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="190,255,254,280"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="336,209,258,250,255,246,333,204"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="279,255,419,280"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="357,207,354,241,349,241,352,207"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="377,204,450,245,447,250,375,209"/>
+<area shape="poly" id="edge11_Node000010_Node000002" title=" " alt="" coords="443,280,432,283,209,330,208,325,431,277,442,275"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="BoitierCommandeArrosage/lib/Vanne/Vanne.h" name="BoitierCommandeArrosage/lib/Vanne/Vanne.h">
+<area shape="rect" id="Node000001" title="Pilotage physique d&#39;une électrovanne bistable via un pont en H partagé (L298), multiplexé par une bro..." alt="" coords="5,5,204,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="75,167,159,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,48,44,62,25,79,15,98,15,107,19,117,41,142,69,159,66,163,37,146,14,120,10,108,10,97,21,76,40,58,63,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="29,93,180,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,46,107,79,102,79,102,46"/>
+<area shape="rect" id="Node000004" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="204,93,280,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,43,211,84,208,89,136,48"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="223,121,150,162,148,157,221,116"/>
+</map>

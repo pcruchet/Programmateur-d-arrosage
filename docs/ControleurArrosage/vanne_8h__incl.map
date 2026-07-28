@@ -1,0 +1,9 @@
+<map id="ControleurArrosage/vanne.h" name="ControleurArrosage/vanne.h">
+<area shape="rect" id="Node000001" title="Image logicielle d&#39;une électrovanne, côté application Qt/QML." alt="" coords="78,5,226,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,80,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,48,71,87,68,83,124,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="104,93,200,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,46,155,79,149,79,149,46"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="225,93,327,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,43,247,84,245,88,181,48"/>
+</map>

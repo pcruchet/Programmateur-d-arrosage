@@ -1,0 +1,5 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,80,31"/>
+<area shape="rect" id="Node000001" href="$classRoueChiffres.html" title="QML Component : Roue de sélection (Tumbler) d&#39;un nombre à deux chiffres (00 à valeurMax&#45;1)." alt="" coords="128,5,233,31"/>
+<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="94,15,128,15,128,21,94,21"/>
+</map>

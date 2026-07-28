@@ -1,0 +1,12 @@
+<map id="BoitierCommandeArrosage/lib/ProtocoleArrosageServeur/ProtocoleArrosageServeur.cpp" name="BoitierCommandeArrosage/lib/ProtocoleArrosageServeur/ProtocoleArrosageServeur.cpp">
+<area shape="rect" id="Node000001" title="Implémentation de l&#39;encodage/décodage des trames JSON du protocole applicatif. Documentation complète..." alt="" coords="5,5,227,60"/>
+<area shape="rect" id="Node000002" href="$ProtocoleArrosageServeur_8h.html" title="Encodage/décodage des trames JSON du protocole applicatif &quot;Contrôleur d&#39;Arrosage&quot; (WebSocket,..." alt="" coords="15,108,217,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,60,119,94,113,94,113,60"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="86,255,170,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="97,136,77,149,59,166,48,186,47,195,50,205,68,228,92,246,88,250,64,232,46,208,42,196,43,184,54,163,73,145,93,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="61,181,171,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="119,134,119,168,113,168,113,134"/>
+<area shape="rect" id="Node000005" href="$Debug_8h.html" title="Macros de trace série partagées par l&#39;ensemble du firmware." alt="" coords="195,181,271,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="136,131,204,172,201,176,133,136"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="218,209,158,249,155,245,215,204"/>
+</map>

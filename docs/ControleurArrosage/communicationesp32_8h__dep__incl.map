@@ -1,0 +1,11 @@
+<map id="ControleurArrosage/communicationesp32.h" name="ControleurArrosage/communicationesp32.h">
+<area shape="rect" id="Node000001" title="Client WebSocket bas niveau vers le boîtier ESP32." alt="" coords="113,5,291,45"/>
+<area shape="rect" id="Node000002" href="$communicationesp32_8cpp.html" title="Implémentation de CommunicationESP32." alt="" coords="5,93,199,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,56,126,95,122,91,168,52"/>
+<area shape="rect" id="Node000003" href="$controleurarrosage_8h.html" title="Orchestrateur central de l&#39;application Qt/QML &quot;Contrôleur d&#39;Arrosage&quot;." alt="" coords="223,93,384,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,52,283,91,279,95,233,56"/>
+<area shape="rect" id="Node000004" href="$controleurarrosage_8cpp.html" title="Implémentation de ControleurArrosage." alt="" coords="122,181,298,221"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="274,145,232,183,229,179,271,141"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Point d&#39;entrée de l&#39;application Qt/QML &quot;Contrôleur d&#39;Arrosage&quot;." alt="" coords="323,181,471,221"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="336,141,378,179,374,183,332,145"/>
+</map>

@@ -1,0 +1,1619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contrôleur d&#39;Arrosage: Référence de la classe ProtocoleArrosageClient</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Contrôleur d&#39;Arrosage
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classProtocoleArrosageClient.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Types publics</a> &#124;
+<a href="#pub-methods">Fonctions membres publiques</a> &#124;
+<a href="#pub-static-methods">Fonctions membres publiques statiques</a> &#124;
+<a href="#pub-static-attribs">Attributs publics statiques</a> &#124;
+<a href="classProtocoleArrosageClient-members.html">Liste de tous les membres</a>  </div>
+  <div class="headertitle"><div class="title">Référence de la classe ProtocoleArrosageClient<div class="ingroups"><a class="el" href="group__cpp__classes.html">Classes C++</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Classe C++ : Encodage / décodage des trames JSON du protocole "Contrôleur d'Arrosage" v1.1 (WebSocket, application Qt/QML &lt;-&gt; ESP32).  
+ <a href="classProtocoleArrosageClient.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="protocolearrosageclient_8h_source.html">protocolearrosageclient.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Types publics</h2></td></tr>
+<tr class="memitem:ae4566274bed726263956ef6855bc31c4" id="r_ae4566274bed726263956ef6855bc31c4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4">CodeErreur</a> { <br />
+&#160;&#160;<a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4a2d3ff82be04bb23c9454685d0d08e306">ERREUR_AUCUNE</a> = 0
+, <a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4a14758fc701b417becef90f54243502ac">ERREUR_VANNE_INEXISTANTE</a> = 1
+, <a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4abcd50bb9c596557761d076cc4d8b2ebd">ERREUR_MODE_INVALIDE</a> = 2
+, <a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4a88efea91e1856df4e42a107d48847586">ERREUR_PROG_INVALIDE</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4a5b1f74fb9e7abdef221098a6cd90a2c7">ERREUR_RTC_INDISPONIBLE</a> = 4
+, <a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4a8d559b179f69300ef45abdee2b108166">ERREUR_SQLITE_INDISPONIBLE</a> = 5
+<br />
+ }</td></tr>
+<tr class="memdesc:ae4566274bed726263956ef6855bc31c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codes d'erreur retournés par le boîtier dans une trame d'erreur (§8 du protocole).  <a href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae4566274bed726263956ef6855bc31c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a797a9c54658a4bf8605a15c399fe1fb8" id="r_a797a9c54658a4bf8605a15c399fe1fb8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a797a9c54658a4bf8605a15c399fe1fb8">ProtocoleArrosageClient</a> (int _version=1)</td></tr>
+<tr class="memdesc:a797a9c54658a4bf8605a15c399fe1fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit le codec pour la version de protocole donnée.  <br /></td></tr>
+<tr class="separator:a797a9c54658a4bf8605a15c399fe1fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c85b26cd59e232577eb9dd47dde64b4" id="r_a3c85b26cd59e232577eb9dd47dde64b4"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a3c85b26cd59e232577eb9dd47dde64b4">ouvrirVanne</a> (int _id)</td></tr>
+<tr class="memdesc:a3c85b26cd59e232577eb9dd47dde64b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une commande d'ouverture manuelle. Trame : {"v":1,"t":"c","c":"O","i":_id}.  <br /></td></tr>
+<tr class="separator:a3c85b26cd59e232577eb9dd47dde64b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb42fe805aaed0aee2c3f6ed6921458" id="r_abeb42fe805aaed0aee2c3f6ed6921458"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#abeb42fe805aaed0aee2c3f6ed6921458">fermerVanne</a> (int _id)</td></tr>
+<tr class="memdesc:abeb42fe805aaed0aee2c3f6ed6921458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une commande de fermeture manuelle. Trame : {"v":1,"t":"c","c":"F","i":_id}.  <br /></td></tr>
+<tr class="separator:abeb42fe805aaed0aee2c3f6ed6921458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bec1d9a3c284b09a9de324e0368ce9e" id="r_a0bec1d9a3c284b09a9de324e0368ce9e"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a0bec1d9a3c284b09a9de324e0368ce9e">setMode</a> (int _id, char _mode)</td></tr>
+<tr class="memdesc:a0bec1d9a3c284b09a9de324e0368ce9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une commande de changement de mode. Trame : {"v":1,"t":"c","c":"m","i":_id,"m":_mode}.  <br /></td></tr>
+<tr class="separator:a0bec1d9a3c284b09a9de324e0368ce9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ecc59c5a248e3089dbbd3d8720644f" id="r_a38ecc59c5a248e3089dbbd3d8720644f"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a38ecc59c5a248e3089dbbd3d8720644f">setProgrammation</a> (int _id, const QDateTime &amp;_debut, int _dureeMinutes, int _frequenceHeures)</td></tr>
+<tr class="memdesc:a38ecc59c5a248e3089dbbd3d8720644f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une commande de programmation. Trame : {"v":1,"t":"c","c":"p","i":_id,"h":"&lt;ISO 8601&gt;","d":_dureeMinutes,"f":_frequenceHeures}.  <br /></td></tr>
+<tr class="separator:a38ecc59c5a248e3089dbbd3d8720644f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace14eb3c73c83e64893613d6f4f23fb0" id="r_ace14eb3c73c83e64893613d6f4f23fb0"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ace14eb3c73c83e64893613d6f4f23fb0">setHeureSysteme</a> (const QDateTime &amp;_dateHeure)</td></tr>
+<tr class="memdesc:ace14eb3c73c83e64893613d6f4f23fb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une commande de réglage de l'heure système du boîtier. Trame : {"v":1,"t":"c","c":"t","h":"&lt;ISO 8601&gt;"}.  <br /></td></tr>
+<tr class="separator:ace14eb3c73c83e64893613d6f4f23fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda3afceae514ee3a1418c791260ffd2" id="r_aeda3afceae514ee3a1418c791260ffd2"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#aeda3afceae514ee3a1418c791260ffd2">setHeureSysteme</a> (const QString &amp;_dateHeureIso)</td></tr>
+<tr class="memdesc:aeda3afceae514ee3a1418c791260ffd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Surcharge acceptant directement une date/heure déjà au format ISO 8601, sans repasser par QDateTime.  <br /></td></tr>
+<tr class="separator:aeda3afceae514ee3a1418c791260ffd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1023bd993f5d0f699641c749d0df272" id="r_ad1023bd993f5d0f699641c749d0df272"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ad1023bd993f5d0f699641c749d0df272">demanderHeureSysteme</a> ()</td></tr>
+<tr class="memdesc:ad1023bd993f5d0f699641c749d0df272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une demande de lecture de l'heure système. Trame : {"v":1,"t":"q","c":"T"}.  <br /></td></tr>
+<tr class="separator:ad1023bd993f5d0f699641c749d0df272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c8450d166b2f1605f4da755d0855972" id="r_a6c8450d166b2f1605f4da755d0855972"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a6c8450d166b2f1605f4da755d0855972">demanderEtatVanne</a> (int _id)</td></tr>
+<tr class="memdesc:a6c8450d166b2f1605f4da755d0855972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une demande de lecture de l'état d'une vanne. Trame : {"v":1,"t":"q","c":"E","i":_id}.  <br /></td></tr>
+<tr class="separator:a6c8450d166b2f1605f4da755d0855972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a211de5fb18f0715c05901fd663f2fd" id="r_a5a211de5fb18f0715c05901fd663f2fd"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a5a211de5fb18f0715c05901fd663f2fd">demanderMode</a> (int _id)</td></tr>
+<tr class="memdesc:a5a211de5fb18f0715c05901fd663f2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une demande de lecture du mode d'une vanne. Trame : {"v":1,"t":"q","c":"M","i":_id}.  <br /></td></tr>
+<tr class="separator:a5a211de5fb18f0715c05901fd663f2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7485ab5438d319212b2e03f078b95fad" id="r_a7485ab5438d319212b2e03f078b95fad"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a7485ab5438d319212b2e03f078b95fad">demanderProgrammation</a> (int _id)</td></tr>
+<tr class="memdesc:a7485ab5438d319212b2e03f078b95fad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une demande de lecture de la programmation d'une vanne. Trame : {"v":1,"t":"q","c":"P","i":_id}.  <br /></td></tr>
+<tr class="separator:a7485ab5438d319212b2e03f078b95fad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dd63f47e27ea996a38edc45e2ab56aa" id="r_a1dd63f47e27ea996a38edc45e2ab56aa"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a1dd63f47e27ea996a38edc45e2ab56aa">demanderEtatSysteme</a> ()</td></tr>
+<tr class="memdesc:a1dd63f47e27ea996a38edc45e2ab56aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une demande de lecture de l'état système complet (toutes les vannes en une seule trame). Trame : {"v":1,"t":"q","c":"S"}.  <br /></td></tr>
+<tr class="separator:a1dd63f47e27ea996a38edc45e2ab56aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f66230166b070eb833492ff958cec2" id="r_a31f66230166b070eb833492ff958cec2"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a31f66230166b070eb833492ff958cec2">ping</a> ()</td></tr>
+<tr class="memdesc:a31f66230166b070eb833492ff958cec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode une demande de test de présence. Trame : {"v":1,"t":"q","c":"G"}.  <br /></td></tr>
+<tr class="separator:a31f66230166b070eb833492ff958cec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bbde78bf4427b31b63afa054411efbe" id="r_a1bbde78bf4427b31b63afa054411efbe"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a1bbde78bf4427b31b63afa054411efbe">parse</a> (const QByteArray &amp;_message)</td></tr>
+<tr class="memdesc:a1bbde78bf4427b31b63afa054411efbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse un message JSON brut reçu du boîtier.  <br /></td></tr>
+<tr class="separator:a1bbde78bf4427b31b63afa054411efbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3036b5750a1ee0287a2f60fbbc246d0" id="r_ae3036b5750a1ee0287a2f60fbbc246d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ae3036b5750a1ee0287a2f60fbbc246d0">estReponse</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:ae3036b5750a1ee0287a2f60fbbc246d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf959ae0a33a2395582030f07ee472d0" id="r_acf959ae0a33a2395582030f07ee472d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#acf959ae0a33a2395582030f07ee472d0">estAck</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:acf959ae0a33a2395582030f07ee472d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade170d3e82760d25461b9a465d9fb54b" id="r_ade170d3e82760d25461b9a465d9fb54b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ade170d3e82760d25461b9a465d9fb54b">estErreur</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:ade170d3e82760d25461b9a465d9fb54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44920e211be539dadc10fe08b0ecfb23" id="r_a44920e211be539dadc10fe08b0ecfb23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a44920e211be539dadc10fe08b0ecfb23">estNotification</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a44920e211be539dadc10fe08b0ecfb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129c4d3ccf5d62d69cd581f282a3ec69" id="r_a129c4d3ccf5d62d69cd581f282a3ec69"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a129c4d3ccf5d62d69cd581f282a3ec69">getVersion</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a129c4d3ccf5d62d69cd581f282a3ec69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1681dd697e82d50ce00b78d68dfa1f" id="r_a0d1681dd697e82d50ce00b78d68dfa1f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a0d1681dd697e82d50ce00b78d68dfa1f">getType</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a0d1681dd697e82d50ce00b78d68dfa1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ff28f1efd1a65c01c9c4d8f96782ac7" id="r_a6ff28f1efd1a65c01c9c4d8f96782ac7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a6ff28f1efd1a65c01c9c4d8f96782ac7">getCommande</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a6ff28f1efd1a65c01c9c4d8f96782ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d770f0cab610c272ffc2e4fb1c0043" id="r_a97d770f0cab610c272ffc2e4fb1c0043"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a97d770f0cab610c272ffc2e4fb1c0043">getIdVanne</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a97d770f0cab610c272ffc2e4fb1c0043"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70c8d2daa68f85b7cf4677f53f7990d" id="r_ab70c8d2daa68f85b7cf4677f53f7990d"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ab70c8d2daa68f85b7cf4677f53f7990d">getMode</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:ab70c8d2daa68f85b7cf4677f53f7990d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3535245a0dcc936131331891c94db0a" id="r_ae3535245a0dcc936131331891c94db0a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ae3535245a0dcc936131331891c94db0a">getEtat</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:ae3535245a0dcc936131331891c94db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade42c30d953bbc645679226dd7293bbf" id="r_ade42c30d953bbc645679226dd7293bbf"><td class="memItemLeft" align="right" valign="top">QDateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ade42c30d953bbc645679226dd7293bbf">getHeure</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:ade42c30d953bbc645679226dd7293bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612e9177dd2ff055e5be7e228c3d1473" id="r_a612e9177dd2ff055e5be7e228c3d1473"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a612e9177dd2ff055e5be7e228c3d1473">getDuree</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a612e9177dd2ff055e5be7e228c3d1473"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0826d10edc2814d925eb7eee8f733f8a" id="r_a0826d10edc2814d925eb7eee8f733f8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a0826d10edc2814d925eb7eee8f733f8a">getFrequence</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a0826d10edc2814d925eb7eee8f733f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f7c6f21132b7495dbe8bd642fe70fa" id="r_a09f7c6f21132b7495dbe8bd642fe70fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a09f7c6f21132b7495dbe8bd642fe70fa">getCodeErreur</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="separator:a09f7c6f21132b7495dbe8bd642fe70fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83cd878f771d86b95eefef9359886258" id="r_a83cd878f771d86b95eefef9359886258"><td class="memItemLeft" align="right" valign="top">QJsonArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a83cd878f771d86b95eefef9359886258">getVannes</a> (const QJsonObject &amp;_trame) const</td></tr>
+<tr class="memdesc:a83cd878f771d86b95eefef9359886258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extrait le tableau des états de vannes d'une réponse à <a class="el" href="classProtocoleArrosageClient.html#a1dd63f47e27ea996a38edc45e2ab56aa" title="Encode une demande de lecture de l&#39;état système complet (toutes les vannes en une seule trame)....">demanderEtatSysteme()</a> (champ "s" : tableau d'objets {"i","e","m","h","d","f"}).  <br /></td></tr>
+<tr class="separator:a83cd878f771d86b95eefef9359886258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Fonctions membres publiques statiques</h2></td></tr>
+<tr class="memitem:a4844ce89f6b313e960c7bdd1b3263f85" id="r_a4844ce89f6b313e960c7bdd1b3263f85"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a4844ce89f6b313e960c7bdd1b3263f85">estModeValide</a> (char _mode)</td></tr>
+<tr class="memdesc:a4844ce89f6b313e960c7bdd1b3263f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie qu'un caractère de mode correspond à une valeur MODE_* connue.  <br /></td></tr>
+<tr class="separator:a4844ce89f6b313e960c7bdd1b3263f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15e142f3952c09a147dcdde481be4be" id="r_ae15e142f3952c09a147dcdde481be4be"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ae15e142f3952c09a147dcdde481be4be">messageErreur</a> (int _code)</td></tr>
+<tr class="memdesc:ae15e142f3952c09a147dcdde481be4be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traduit un code d'erreur du protocole en message lisible (français).  <br /></td></tr>
+<tr class="separator:ae15e142f3952c09a147dcdde481be4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Attributs publics statiques</h2></td></tr>
+<tr class="memitem:aab9ea2e883be4856fa1d24f605ae957d" id="r_aab9ea2e883be4856fa1d24f605ae957d"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#aab9ea2e883be4856fa1d24f605ae957d">TYPE_QUERY</a> = 'q'</td></tr>
+<tr class="memdesc:aab9ea2e883be4856fa1d24f605ae957d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trame de demande (question) émise par le client.  <br /></td></tr>
+<tr class="separator:aab9ea2e883be4856fa1d24f605ae957d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac924f311f767b4828922fb3ee685116d" id="r_ac924f311f767b4828922fb3ee685116d"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ac924f311f767b4828922fb3ee685116d">TYPE_REPONSE</a> = 'r'</td></tr>
+<tr class="memdesc:ac924f311f767b4828922fb3ee685116d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trame de réponse à une demande.  <br /></td></tr>
+<tr class="separator:ac924f311f767b4828922fb3ee685116d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b0c04c72ce6c56b600130afdfb51fa" id="r_a49b0c04c72ce6c56b600130afdfb51fa"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a49b0c04c72ce6c56b600130afdfb51fa">TYPE_COMMANDE</a> = 'c'</td></tr>
+<tr class="memdesc:a49b0c04c72ce6c56b600130afdfb51fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trame de commande (action à exécuter) émise par le client.  <br /></td></tr>
+<tr class="separator:a49b0c04c72ce6c56b600130afdfb51fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3caf5efa1f0c44368cad6d4010b294cd" id="r_a3caf5efa1f0c44368cad6d4010b294cd"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a3caf5efa1f0c44368cad6d4010b294cd">TYPE_ACK</a> = 'a'</td></tr>
+<tr class="memdesc:a3caf5efa1f0c44368cad6d4010b294cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trame d'accusé de réception d'une commande exécutée avec succès.  <br /></td></tr>
+<tr class="separator:a3caf5efa1f0c44368cad6d4010b294cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac6624b074c5aa22e1de53ff8d7dfe8" id="r_a6ac6624b074c5aa22e1de53ff8d7dfe8"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a6ac6624b074c5aa22e1de53ff8d7dfe8">TYPE_ERREUR</a> = 'e'</td></tr>
+<tr class="memdesc:a6ac6624b074c5aa22e1de53ff8d7dfe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trame d'erreur.  <br /></td></tr>
+<tr class="separator:a6ac6624b074c5aa22e1de53ff8d7dfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a21e6ea524f25b9705abf17be5764d" id="r_a43a21e6ea524f25b9705abf17be5764d"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a43a21e6ea524f25b9705abf17be5764d">TYPE_NOTIFICATION</a> = 'n'</td></tr>
+<tr class="memdesc:a43a21e6ea524f25b9705abf17be5764d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trame de notification spontanée émise par le serveur.  <br /></td></tr>
+<tr class="separator:a43a21e6ea524f25b9705abf17be5764d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360dba993bd700371ca6f732f19e0f1f" id="r_a360dba993bd700371ca6f732f19e0f1f"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a360dba993bd700371ca6f732f19e0f1f">CMD_GET_TIME</a> = 'T'</td></tr>
+<tr class="memdesc:a360dba993bd700371ca6f732f19e0f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture de l'heure système.  <br /></td></tr>
+<tr class="separator:a360dba993bd700371ca6f732f19e0f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b8755339efe928cbc355533ec09d5a" id="r_aa6b8755339efe928cbc355533ec09d5a"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#aa6b8755339efe928cbc355533ec09d5a">CMD_SET_TIME</a> = 't'</td></tr>
+<tr class="memdesc:aa6b8755339efe928cbc355533ec09d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écriture de l'heure système.  <br /></td></tr>
+<tr class="separator:aa6b8755339efe928cbc355533ec09d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14538bae95ca5ac754d2d181866eded5" id="r_a14538bae95ca5ac754d2d181866eded5"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a14538bae95ca5ac754d2d181866eded5">CMD_GET_ETAT</a> = 'E'</td></tr>
+<tr class="memdesc:a14538bae95ca5ac754d2d181866eded5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture de l'état (ouverte/fermée) d'une vanne.  <br /></td></tr>
+<tr class="separator:a14538bae95ca5ac754d2d181866eded5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae452b9ebb9f38ba7e0244694ba86591b" id="r_ae452b9ebb9f38ba7e0244694ba86591b"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ae452b9ebb9f38ba7e0244694ba86591b">CMD_GET_MODE</a> = 'M'</td></tr>
+<tr class="memdesc:ae452b9ebb9f38ba7e0244694ba86591b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture du mode d'une vanne.  <br /></td></tr>
+<tr class="separator:ae452b9ebb9f38ba7e0244694ba86591b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7947704414c7f748d0f79cbeda9319e" id="r_ad7947704414c7f748d0f79cbeda9319e"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ad7947704414c7f748d0f79cbeda9319e">CMD_SET_MODE</a> = 'm'</td></tr>
+<tr class="memdesc:ad7947704414c7f748d0f79cbeda9319e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écriture du mode d'une vanne.  <br /></td></tr>
+<tr class="separator:ad7947704414c7f748d0f79cbeda9319e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac67ba1b319e675f1e1ca5d98b922169b" id="r_ac67ba1b319e675f1e1ca5d98b922169b"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ac67ba1b319e675f1e1ca5d98b922169b">CMD_GET_PROG</a> = 'P'</td></tr>
+<tr class="memdesc:ac67ba1b319e675f1e1ca5d98b922169b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture de la programmation d'une vanne.  <br /></td></tr>
+<tr class="separator:ac67ba1b319e675f1e1ca5d98b922169b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af104ab09b36848cbf428a571e95a6ad5" id="r_af104ab09b36848cbf428a571e95a6ad5"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#af104ab09b36848cbf428a571e95a6ad5">CMD_SET_PROG</a> = 'p'</td></tr>
+<tr class="memdesc:af104ab09b36848cbf428a571e95a6ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Écriture de la programmation d'une vanne.  <br /></td></tr>
+<tr class="separator:af104ab09b36848cbf428a571e95a6ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff2e71be87816d45aeb5cf138d549ff8" id="r_aff2e71be87816d45aeb5cf138d549ff8"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#aff2e71be87816d45aeb5cf138d549ff8">CMD_OUVRIR</a> = 'O'</td></tr>
+<tr class="memdesc:aff2e71be87816d45aeb5cf138d549ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commande d'ouverture manuelle d'une vanne.  <br /></td></tr>
+<tr class="separator:aff2e71be87816d45aeb5cf138d549ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2cd10c68a42aa0db83f51e839cd0b5" id="r_adc2cd10c68a42aa0db83f51e839cd0b5"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#adc2cd10c68a42aa0db83f51e839cd0b5">CMD_FERMER</a> = 'F'</td></tr>
+<tr class="memdesc:adc2cd10c68a42aa0db83f51e839cd0b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commande de fermeture manuelle d'une vanne.  <br /></td></tr>
+<tr class="separator:adc2cd10c68a42aa0db83f51e839cd0b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0356f4ebb841ee99548baf879c33f3d" id="r_ae0356f4ebb841ee99548baf879c33f3d"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ae0356f4ebb841ee99548baf879c33f3d">CMD_PING</a> = 'G'</td></tr>
+<tr class="memdesc:ae0356f4ebb841ee99548baf879c33f3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commande de test de présence (ping/pong).  <br /></td></tr>
+<tr class="separator:ae0356f4ebb841ee99548baf879c33f3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98dfb32769316c5448b90bf318892a9" id="r_ad98dfb32769316c5448b90bf318892a9"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#ad98dfb32769316c5448b90bf318892a9">CMD_GET_SYSTEM</a> = 'S'</td></tr>
+<tr class="memdesc:ad98dfb32769316c5448b90bf318892a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture de l'état système complet.  <br /></td></tr>
+<tr class="separator:ad98dfb32769316c5448b90bf318892a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc2b7056949699e9874c173d075cbf23" id="r_adc2b7056949699e9874c173d075cbf23"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#adc2b7056949699e9874c173d075cbf23">MODE_MANUEL</a> = 'M'</td></tr>
+<tr class="memdesc:adc2b7056949699e9874c173d075cbf23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode Manuel.  <br /></td></tr>
+<tr class="separator:adc2b7056949699e9874c173d075cbf23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9143bba18f572048657d77a03884b4bb" id="r_a9143bba18f572048657d77a03884b4bb"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a9143bba18f572048657d77a03884b4bb">MODE_PROGRAMME</a> = 'P'</td></tr>
+<tr class="memdesc:a9143bba18f572048657d77a03884b4bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode Programme.  <br /></td></tr>
+<tr class="separator:a9143bba18f572048657d77a03884b4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb42238888354271854fdeb3cfcf263" id="r_a1fb42238888354271854fdeb3cfcf263"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a1fb42238888354271854fdeb3cfcf263">MODE_AUTOMATIQUE</a> = 'A'</td></tr>
+<tr class="memdesc:a1fb42238888354271854fdeb3cfcf263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode Automatique.  <br /></td></tr>
+<tr class="separator:a1fb42238888354271854fdeb3cfcf263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a6156226ac448a03178ae1b58556671" id="r_a0a6156226ac448a03178ae1b58556671"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a0a6156226ac448a03178ae1b58556671">ETAT_FERMEE</a> = 'F'</td></tr>
+<tr class="memdesc:a0a6156226ac448a03178ae1b58556671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code d'état "vanne fermée".  <br /></td></tr>
+<tr class="separator:a0a6156226ac448a03178ae1b58556671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d249f3863103ced3b3aa2077d549cd5" id="r_a8d249f3863103ced3b3aa2077d549cd5"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProtocoleArrosageClient.html#a8d249f3863103ced3b3aa2077d549cd5">ETAT_OUVERTE</a> = 'O'</td></tr>
+<tr class="memdesc:a8d249f3863103ced3b3aa2077d549cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code d'état "vanne ouverte".  <br /></td></tr>
+<tr class="separator:a8d249f3863103ced3b3aa2077d549cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Classe C++ : Encodage / décodage des trames JSON du protocole "Contrôleur d'Arrosage" v1.1 (WebSocket, application Qt/QML &lt;-&gt; ESP32). </p>
+<p>Ne connaît pas le transport (WebSocket) : produit et consomme des QByteArray/QJsonObject, à charge de <a class="el" href="classControleurArrosage.html" title="Classe C++ : Orchestrateur central de l&#39;application.">ControleurArrosage</a> de les transmettre via <a class="el" href="classCommunicationESP32.html" title="Classe C++ : Encapsule la connexion WebSocket vers le boîtier ESP32.">CommunicationESP32</a>. Les méthodes d'extraction (<a class="el" href="classProtocoleArrosageClient.html#a0d1681dd697e82d50ce00b78d68dfa1f">getType()</a>, <a class="el" href="classProtocoleArrosageClient.html#a6ff28f1efd1a65c01c9c4d8f96782ac7">getCommande()</a>, ...) renvoient une valeur par défaut neutre ('\0' ou 0) si le champ est absent de la trame, plutôt que d'échouer. </p>
+</div><h2 class="groupheader">Documentation des énumérations membres</h2>
+<a id="ae4566274bed726263956ef6855bc31c4" name="ae4566274bed726263956ef6855bc31c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4566274bed726263956ef6855bc31c4">&#9670;&#160;</a></span>CodeErreur</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classProtocoleArrosageClient.html#ae4566274bed726263956ef6855bc31c4">ProtocoleArrosageClient::CodeErreur</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codes d'erreur retournés par le boîtier dans une trame d'erreur (§8 du protocole). </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ae4566274bed726263956ef6855bc31c4a2d3ff82be04bb23c9454685d0d08e306" name="ae4566274bed726263956ef6855bc31c4a2d3ff82be04bb23c9454685d0d08e306"></a>ERREUR_AUCUNE&#160;</td><td class="fielddoc"><p>Aucune erreur. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae4566274bed726263956ef6855bc31c4a14758fc701b417becef90f54243502ac" name="ae4566274bed726263956ef6855bc31c4a14758fc701b417becef90f54243502ac"></a>ERREUR_VANNE_INEXISTANTE&#160;</td><td class="fielddoc"><p>L'identifiant de vanne ne correspond à aucune vanne connue du boîtier. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae4566274bed726263956ef6855bc31c4abcd50bb9c596557761d076cc4d8b2ebd" name="ae4566274bed726263956ef6855bc31c4abcd50bb9c596557761d076cc4d8b2ebd"></a>ERREUR_MODE_INVALIDE&#160;</td><td class="fielddoc"><p>Le mode demandé n'est pas une valeur MODE_* valide. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae4566274bed726263956ef6855bc31c4a88efea91e1856df4e42a107d48847586" name="ae4566274bed726263956ef6855bc31c4a88efea91e1856df4e42a107d48847586"></a>ERREUR_PROG_INVALIDE&#160;</td><td class="fielddoc"><p>La programmation demandée est invalide (heure, durée ou fréquence). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae4566274bed726263956ef6855bc31c4a5b1f74fb9e7abdef221098a6cd90a2c7" name="ae4566274bed726263956ef6855bc31c4a5b1f74fb9e7abdef221098a6cd90a2c7"></a>ERREUR_RTC_INDISPONIBLE&#160;</td><td class="fielddoc"><p>Le RTC du boîtier est indisponible. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae4566274bed726263956ef6855bc31c4a8d559b179f69300ef45abdee2b108166" name="ae4566274bed726263956ef6855bc31c4a8d559b179f69300ef45abdee2b108166"></a>ERREUR_SQLITE_INDISPONIBLE&#160;</td><td class="fielddoc"><p>Le stockage persistant du boîtier est indisponible. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
+<a id="a797a9c54658a4bf8605a15c399fe1fb8" name="a797a9c54658a4bf8605a15c399fe1fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a797a9c54658a4bf8605a15c399fe1fb8">&#9670;&#160;</a></span>ProtocoleArrosageClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ProtocoleArrosageClient::ProtocoleArrosageClient </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_version</em> = <code>1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construit le codec pour la version de protocole donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_version</td><td>Version du protocole insérée dans chaque trame émise (champ "v"). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="a1dd63f47e27ea996a38edc45e2ab56aa" name="a1dd63f47e27ea996a38edc45e2ab56aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dd63f47e27ea996a38edc45e2ab56aa">&#9670;&#160;</a></span>demanderEtatSysteme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::demanderEtatSysteme </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une demande de lecture de l'état système complet (toutes les vannes en une seule trame). Trame : {"v":1,"t":"q","c":"S"}. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="classProtocoleArrosageClient.html#a83cd878f771d86b95eefef9359886258" title="Extrait le tableau des états de vannes d&#39;une réponse à demanderEtatSysteme() (champ &quot;s&quot; : tableau d&#39;o...">getVannes()</a> pour l'extraction du tableau de vannes de la réponse. </dd></dl>
+
+</div>
+</div>
+<a id="a6c8450d166b2f1605f4da755d0855972" name="a6c8450d166b2f1605f4da755d0855972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c8450d166b2f1605f4da755d0855972">&#9670;&#160;</a></span>demanderEtatVanne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::demanderEtatVanne </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une demande de lecture de l'état d'une vanne. Trame : {"v":1,"t":"q","c":"E","i":_id}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne concernée. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="ad1023bd993f5d0f699641c749d0df272" name="ad1023bd993f5d0f699641c749d0df272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1023bd993f5d0f699641c749d0df272">&#9670;&#160;</a></span>demanderHeureSysteme()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::demanderHeureSysteme </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une demande de lecture de l'heure système. Trame : {"v":1,"t":"q","c":"T"}. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="a5a211de5fb18f0715c05901fd663f2fd" name="a5a211de5fb18f0715c05901fd663f2fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a211de5fb18f0715c05901fd663f2fd">&#9670;&#160;</a></span>demanderMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::demanderMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une demande de lecture du mode d'une vanne. Trame : {"v":1,"t":"q","c":"M","i":_id}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne concernée. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="a7485ab5438d319212b2e03f078b95fad" name="a7485ab5438d319212b2e03f078b95fad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7485ab5438d319212b2e03f078b95fad">&#9670;&#160;</a></span>demanderProgrammation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::demanderProgrammation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une demande de lecture de la programmation d'une vanne. Trame : {"v":1,"t":"q","c":"P","i":_id}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne concernée. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="acf959ae0a33a2395582030f07ee472d0" name="acf959ae0a33a2395582030f07ee472d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf959ae0a33a2395582030f07ee472d0">&#9670;&#160;</a></span>estAck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProtocoleArrosageClient::estAck </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>true si le champ "t" vaut TYPE_ACK. </dd></dl>
+
+</div>
+</div>
+<a id="ade170d3e82760d25461b9a465d9fb54b" name="ade170d3e82760d25461b9a465d9fb54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade170d3e82760d25461b9a465d9fb54b">&#9670;&#160;</a></span>estErreur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProtocoleArrosageClient::estErreur </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>true si le champ "t" vaut TYPE_ERREUR. </dd></dl>
+
+</div>
+</div>
+<a id="a4844ce89f6b313e960c7bdd1b3263f85" name="a4844ce89f6b313e960c7bdd1b3263f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4844ce89f6b313e960c7bdd1b3263f85">&#9670;&#160;</a></span>estModeValide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProtocoleArrosageClient::estModeValide </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>_mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vérifie qu'un caractère de mode correspond à une valeur MODE_* connue. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_mode</td><td>Caractère à valider. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si _mode est MODE_MANUEL, MODE_PROGRAMME ou MODE_AUTOMATIQUE. </dd></dl>
+
+</div>
+</div>
+<a id="a44920e211be539dadc10fe08b0ecfb23" name="a44920e211be539dadc10fe08b0ecfb23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44920e211be539dadc10fe08b0ecfb23">&#9670;&#160;</a></span>estNotification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProtocoleArrosageClient::estNotification </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>true si le champ "t" vaut TYPE_NOTIFICATION. </dd></dl>
+
+</div>
+</div>
+<a id="ae3036b5750a1ee0287a2f60fbbc246d0" name="ae3036b5750a1ee0287a2f60fbbc246d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3036b5750a1ee0287a2f60fbbc246d0">&#9670;&#160;</a></span>estReponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ProtocoleArrosageClient::estReponse </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>true si le champ "t" vaut TYPE_REPONSE. </dd></dl>
+
+</div>
+</div>
+<a id="abeb42fe805aaed0aee2c3f6ed6921458" name="abeb42fe805aaed0aee2c3f6ed6921458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeb42fe805aaed0aee2c3f6ed6921458">&#9670;&#160;</a></span>fermerVanne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::fermerVanne </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une commande de fermeture manuelle. Trame : {"v":1,"t":"c","c":"F","i":_id}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne à fermer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="a09f7c6f21132b7495dbe8bd642fe70fa" name="a09f7c6f21132b7495dbe8bd642fe70fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f7c6f21132b7495dbe8bd642fe70fa">&#9670;&#160;</a></span>getCodeErreur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProtocoleArrosageClient::getCodeErreur </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "x" (une des constantes CodeErreur), ou ERREUR_AUCUNE si absent. </dd></dl>
+
+</div>
+</div>
+<a id="a6ff28f1efd1a65c01c9c4d8f96782ac7" name="a6ff28f1efd1a65c01c9c4d8f96782ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ff28f1efd1a65c01c9c4d8f96782ac7">&#9670;&#160;</a></span>getCommande()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ProtocoleArrosageClient::getCommande </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "c" (une des constantes CMD_*), ou '\0' si absent. </dd></dl>
+
+</div>
+</div>
+<a id="a612e9177dd2ff055e5be7e228c3d1473" name="a612e9177dd2ff055e5be7e228c3d1473"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612e9177dd2ff055e5be7e228c3d1473">&#9670;&#160;</a></span>getDuree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProtocoleArrosageClient::getDuree </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "d" (durée en minutes), ou 0 si absent. </dd></dl>
+
+</div>
+</div>
+<a id="ae3535245a0dcc936131331891c94db0a" name="ae3535245a0dcc936131331891c94db0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3535245a0dcc936131331891c94db0a">&#9670;&#160;</a></span>getEtat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ProtocoleArrosageClient::getEtat </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "e" (une des constantes ETAT_*), ou '\0' si absent. </dd></dl>
+
+</div>
+</div>
+<a id="a0826d10edc2814d925eb7eee8f733f8a" name="a0826d10edc2814d925eb7eee8f733f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0826d10edc2814d925eb7eee8f733f8a">&#9670;&#160;</a></span>getFrequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProtocoleArrosageClient::getFrequence </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "f" (fréquence en heures), ou 0 si absent. </dd></dl>
+
+</div>
+</div>
+<a id="ade42c30d953bbc645679226dd7293bbf" name="ade42c30d953bbc645679226dd7293bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade42c30d953bbc645679226dd7293bbf">&#9670;&#160;</a></span>getHeure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDateTime ProtocoleArrosageClient::getHeure </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "h" interprété comme date/heure ISO 8601. </dd></dl>
+
+</div>
+</div>
+<a id="a97d770f0cab610c272ffc2e4fb1c0043" name="a97d770f0cab610c272ffc2e4fb1c0043"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d770f0cab610c272ffc2e4fb1c0043">&#9670;&#160;</a></span>getIdVanne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProtocoleArrosageClient::getIdVanne </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "i", ou -1 si absent. </dd></dl>
+
+</div>
+</div>
+<a id="ab70c8d2daa68f85b7cf4677f53f7990d" name="ab70c8d2daa68f85b7cf4677f53f7990d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70c8d2daa68f85b7cf4677f53f7990d">&#9670;&#160;</a></span>getMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ProtocoleArrosageClient::getMode </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "m" (une des constantes MODE_*), ou '\0' si absent. </dd></dl>
+
+</div>
+</div>
+<a id="a0d1681dd697e82d50ce00b78d68dfa1f" name="a0d1681dd697e82d50ce00b78d68dfa1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d1681dd697e82d50ce00b78d68dfa1f">&#9670;&#160;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ProtocoleArrosageClient::getType </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "t" (une des constantes TYPE_*), ou '\0' si absent. </dd></dl>
+
+</div>
+</div>
+<a id="a83cd878f771d86b95eefef9359886258" name="a83cd878f771d86b95eefef9359886258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83cd878f771d86b95eefef9359886258">&#9670;&#160;</a></span>getVannes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonArray ProtocoleArrosageClient::getVannes </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extrait le tableau des états de vannes d'une réponse à <a class="el" href="classProtocoleArrosageClient.html#a1dd63f47e27ea996a38edc45e2ab56aa" title="Encode une demande de lecture de l&#39;état système complet (toutes les vannes en une seule trame)....">demanderEtatSysteme()</a> (champ "s" : tableau d'objets {"i","e","m","h","d","f"}). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_trame</td><td>Trame de réponse à décoder. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Tableau JSON des vannes, vide si le champ "s" est absent. </dd></dl>
+
+</div>
+</div>
+<a id="a129c4d3ccf5d62d69cd581f282a3ec69" name="a129c4d3ccf5d62d69cd581f282a3ec69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129c4d3ccf5d62d69cd581f282a3ec69">&#9670;&#160;</a></span>getVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ProtocoleArrosageClient::getVersion </td>
+          <td>(</td>
+          <td class="paramtype">const QJsonObject &amp;&#160;</td>
+          <td class="paramname"><em>_trame</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Renvoie</dt><dd>Champ "v", ou 0 si absent. </dd></dl>
+
+</div>
+</div>
+<a id="ae15e142f3952c09a147dcdde481be4be" name="ae15e142f3952c09a147dcdde481be4be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae15e142f3952c09a147dcdde481be4be">&#9670;&#160;</a></span>messageErreur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ProtocoleArrosageClient::messageErreur </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_code</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Traduit un code d'erreur du protocole en message lisible (français). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_code</td><td>Code d'erreur (une des constantes CodeErreur). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Message décrivant l'erreur, ou "Erreur inconnue" si _code n'est pas reconnu. </dd></dl>
+
+</div>
+</div>
+<a id="a3c85b26cd59e232577eb9dd47dde64b4" name="a3c85b26cd59e232577eb9dd47dde64b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c85b26cd59e232577eb9dd47dde64b4">&#9670;&#160;</a></span>ouvrirVanne()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::ouvrirVanne </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une commande d'ouverture manuelle. Trame : {"v":1,"t":"c","c":"O","i":_id}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne à ouvrir. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="a1bbde78bf4427b31b63afa054411efbe" name="a1bbde78bf4427b31b63afa054411efbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bbde78bf4427b31b63afa054411efbe">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonObject ProtocoleArrosageClient::parse </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>_message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse un message JSON brut reçu du boîtier. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_message</td><td>Message brut reçu (trame JSON). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Objet JSON correspondant, ou un objet vide si _message n'est pas un document JSON valide représentant un objet. </dd></dl>
+
+</div>
+</div>
+<a id="a31f66230166b070eb833492ff958cec2" name="a31f66230166b070eb833492ff958cec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f66230166b070eb833492ff958cec2">&#9670;&#160;</a></span>ping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::ping </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une demande de test de présence. Trame : {"v":1,"t":"q","c":"G"}. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="ace14eb3c73c83e64893613d6f4f23fb0" name="ace14eb3c73c83e64893613d6f4f23fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace14eb3c73c83e64893613d6f4f23fb0">&#9670;&#160;</a></span>setHeureSysteme() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::setHeureSysteme </td>
+          <td>(</td>
+          <td class="paramtype">const QDateTime &amp;&#160;</td>
+          <td class="paramname"><em>_dateHeure</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une commande de réglage de l'heure système du boîtier. Trame : {"v":1,"t":"c","c":"t","h":"&lt;ISO 8601&gt;"}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_dateHeure</td><td>Nouvelle date/heure à appliquer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="aeda3afceae514ee3a1418c791260ffd2" name="aeda3afceae514ee3a1418c791260ffd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda3afceae514ee3a1418c791260ffd2">&#9670;&#160;</a></span>setHeureSysteme() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::setHeureSysteme </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>_dateHeureIso</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Surcharge acceptant directement une date/heure déjà au format ISO 8601, sans repasser par QDateTime. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_dateHeureIso</td><td>Date/heure au format ISO 8601. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="a0bec1d9a3c284b09a9de324e0368ce9e" name="a0bec1d9a3c284b09a9de324e0368ce9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bec1d9a3c284b09a9de324e0368ce9e">&#9670;&#160;</a></span>setMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::setMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>_mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une commande de changement de mode. Trame : {"v":1,"t":"c","c":"m","i":_id,"m":_mode}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne concernée. </td></tr>
+    <tr><td class="paramname">_mode</td><td>Nouveau mode (une des constantes MODE_*). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<a id="a38ecc59c5a248e3089dbbd3d8720644f" name="a38ecc59c5a248e3089dbbd3d8720644f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ecc59c5a248e3089dbbd3d8720644f">&#9670;&#160;</a></span>setProgrammation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ProtocoleArrosageClient::setProgrammation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QDateTime &amp;&#160;</td>
+          <td class="paramname"><em>_debut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_dureeMinutes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>_frequenceHeures</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode une commande de programmation. Trame : {"v":1,"t":"c","c":"p","i":_id,"h":"&lt;ISO 8601&gt;","d":_dureeMinutes,"f":_frequenceHeures}. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_id</td><td>Identifiant de la vanne concernée. </td></tr>
+    <tr><td class="paramname">_debut</td><td>Heure de début du prochain cycle d'arrosage. </td></tr>
+    <tr><td class="paramname">_dureeMinutes</td><td>Durée d'arrosage, en minutes. </td></tr>
+    <tr><td class="paramname">_frequenceHeures</td><td>Fréquence de répétition, en heures. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Trame JSON compacte prête à être envoyée. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des données membres</h2>
+<a id="adc2cd10c68a42aa0db83f51e839cd0b5" name="adc2cd10c68a42aa0db83f51e839cd0b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2cd10c68a42aa0db83f51e839cd0b5">&#9670;&#160;</a></span>CMD_FERMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_FERMER = 'F'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Commande de fermeture manuelle d'une vanne. </p>
+
+</div>
+</div>
+<a id="a14538bae95ca5ac754d2d181866eded5" name="a14538bae95ca5ac754d2d181866eded5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14538bae95ca5ac754d2d181866eded5">&#9670;&#160;</a></span>CMD_GET_ETAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_GET_ETAT = 'E'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lecture de l'état (ouverte/fermée) d'une vanne. </p>
+
+</div>
+</div>
+<a id="ae452b9ebb9f38ba7e0244694ba86591b" name="ae452b9ebb9f38ba7e0244694ba86591b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae452b9ebb9f38ba7e0244694ba86591b">&#9670;&#160;</a></span>CMD_GET_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_GET_MODE = 'M'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lecture du mode d'une vanne. </p>
+
+</div>
+</div>
+<a id="ac67ba1b319e675f1e1ca5d98b922169b" name="ac67ba1b319e675f1e1ca5d98b922169b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac67ba1b319e675f1e1ca5d98b922169b">&#9670;&#160;</a></span>CMD_GET_PROG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_GET_PROG = 'P'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lecture de la programmation d'une vanne. </p>
+
+</div>
+</div>
+<a id="ad98dfb32769316c5448b90bf318892a9" name="ad98dfb32769316c5448b90bf318892a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98dfb32769316c5448b90bf318892a9">&#9670;&#160;</a></span>CMD_GET_SYSTEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_GET_SYSTEM = 'S'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lecture de l'état système complet. </p>
+
+</div>
+</div>
+<a id="a360dba993bd700371ca6f732f19e0f1f" name="a360dba993bd700371ca6f732f19e0f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360dba993bd700371ca6f732f19e0f1f">&#9670;&#160;</a></span>CMD_GET_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_GET_TIME = 'T'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lecture de l'heure système. </p>
+
+</div>
+</div>
+<a id="aff2e71be87816d45aeb5cf138d549ff8" name="aff2e71be87816d45aeb5cf138d549ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff2e71be87816d45aeb5cf138d549ff8">&#9670;&#160;</a></span>CMD_OUVRIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_OUVRIR = 'O'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Commande d'ouverture manuelle d'une vanne. </p>
+
+</div>
+</div>
+<a id="ae0356f4ebb841ee99548baf879c33f3d" name="ae0356f4ebb841ee99548baf879c33f3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0356f4ebb841ee99548baf879c33f3d">&#9670;&#160;</a></span>CMD_PING</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_PING = 'G'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Commande de test de présence (ping/pong). </p>
+
+</div>
+</div>
+<a id="ad7947704414c7f748d0f79cbeda9319e" name="ad7947704414c7f748d0f79cbeda9319e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7947704414c7f748d0f79cbeda9319e">&#9670;&#160;</a></span>CMD_SET_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_SET_MODE = 'm'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Écriture du mode d'une vanne. </p>
+
+</div>
+</div>
+<a id="af104ab09b36848cbf428a571e95a6ad5" name="af104ab09b36848cbf428a571e95a6ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af104ab09b36848cbf428a571e95a6ad5">&#9670;&#160;</a></span>CMD_SET_PROG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_SET_PROG = 'p'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Écriture de la programmation d'une vanne. </p>
+
+</div>
+</div>
+<a id="aa6b8755339efe928cbc355533ec09d5a" name="aa6b8755339efe928cbc355533ec09d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b8755339efe928cbc355533ec09d5a">&#9670;&#160;</a></span>CMD_SET_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::CMD_SET_TIME = 't'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Écriture de l'heure système. </p>
+
+</div>
+</div>
+<a id="a0a6156226ac448a03178ae1b58556671" name="a0a6156226ac448a03178ae1b58556671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a6156226ac448a03178ae1b58556671">&#9670;&#160;</a></span>ETAT_FERMEE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::ETAT_FERMEE = 'F'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Code d'état "vanne fermée". </p>
+
+</div>
+</div>
+<a id="a8d249f3863103ced3b3aa2077d549cd5" name="a8d249f3863103ced3b3aa2077d549cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d249f3863103ced3b3aa2077d549cd5">&#9670;&#160;</a></span>ETAT_OUVERTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::ETAT_OUVERTE = 'O'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Code d'état "vanne ouverte". </p>
+
+</div>
+</div>
+<a id="a1fb42238888354271854fdeb3cfcf263" name="a1fb42238888354271854fdeb3cfcf263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb42238888354271854fdeb3cfcf263">&#9670;&#160;</a></span>MODE_AUTOMATIQUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::MODE_AUTOMATIQUE = 'A'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mode Automatique. </p>
+
+</div>
+</div>
+<a id="adc2b7056949699e9874c173d075cbf23" name="adc2b7056949699e9874c173d075cbf23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc2b7056949699e9874c173d075cbf23">&#9670;&#160;</a></span>MODE_MANUEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::MODE_MANUEL = 'M'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mode Manuel. </p>
+
+</div>
+</div>
+<a id="a9143bba18f572048657d77a03884b4bb" name="a9143bba18f572048657d77a03884b4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9143bba18f572048657d77a03884b4bb">&#9670;&#160;</a></span>MODE_PROGRAMME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::MODE_PROGRAMME = 'P'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mode Programme. </p>
+
+</div>
+</div>
+<a id="a3caf5efa1f0c44368cad6d4010b294cd" name="a3caf5efa1f0c44368cad6d4010b294cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3caf5efa1f0c44368cad6d4010b294cd">&#9670;&#160;</a></span>TYPE_ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::TYPE_ACK = 'a'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trame d'accusé de réception d'une commande exécutée avec succès. </p>
+
+</div>
+</div>
+<a id="a49b0c04c72ce6c56b600130afdfb51fa" name="a49b0c04c72ce6c56b600130afdfb51fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b0c04c72ce6c56b600130afdfb51fa">&#9670;&#160;</a></span>TYPE_COMMANDE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::TYPE_COMMANDE = 'c'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trame de commande (action à exécuter) émise par le client. </p>
+
+</div>
+</div>
+<a id="a6ac6624b074c5aa22e1de53ff8d7dfe8" name="a6ac6624b074c5aa22e1de53ff8d7dfe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ac6624b074c5aa22e1de53ff8d7dfe8">&#9670;&#160;</a></span>TYPE_ERREUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::TYPE_ERREUR = 'e'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trame d'erreur. </p>
+
+</div>
+</div>
+<a id="a43a21e6ea524f25b9705abf17be5764d" name="a43a21e6ea524f25b9705abf17be5764d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43a21e6ea524f25b9705abf17be5764d">&#9670;&#160;</a></span>TYPE_NOTIFICATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::TYPE_NOTIFICATION = 'n'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trame de notification spontanée émise par le serveur. </p>
+
+</div>
+</div>
+<a id="aab9ea2e883be4856fa1d24f605ae957d" name="aab9ea2e883be4856fa1d24f605ae957d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9ea2e883be4856fa1d24f605ae957d">&#9670;&#160;</a></span>TYPE_QUERY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::TYPE_QUERY = 'q'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trame de demande (question) émise par le client. </p>
+
+</div>
+</div>
+<a id="ac924f311f767b4828922fb3ee685116d" name="ac924f311f767b4828922fb3ee685116d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac924f311f767b4828922fb3ee685116d">&#9670;&#160;</a></span>TYPE_REPONSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char ProtocoleArrosageClient::TYPE_REPONSE = 'r'</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trame de réponse à une demande. </p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
+<li>ControleurArrosage/<a class="el" href="protocolearrosageclient_8h_source.html">protocolearrosageclient.h</a></li>
+<li>ControleurArrosage/<a class="el" href="protocolearrosageclient_8cpp.html">protocolearrosageclient.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classProtocoleArrosageClient.html">ProtocoleArrosageClient</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

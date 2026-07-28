@@ -1,0 +1,11 @@
+<map id="Graphe hiérarchique des classes" name="Graphe hiérarchique des classes">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,80,117,105"/>
+<area shape="rect" id="Node000001" href="$classDatePicker.html" title="QML Component : Page de sélection d&#39;une date et d&#39;une heure (calendrier + roues heure/minute)." alt="" coords="189,5,281,31"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="97,71,164,40,194,28,196,33,166,44,99,76"/>
+<area shape="rect" id="Node000002" href="$classPageConfiguration.html" title="QML : Page de configuration : connexion au boîtier et heure système." alt="" coords="165,55,305,80"/>
+<area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="130,80,164,75,165,80,131,85"/>
+<area shape="rect" id="Node000003" href="$classPagePrincipale.html" title="QML : Page d&#39;accueil : liste des vannes et accès à la configuration." alt="" coords="177,104,294,129"/>
+<area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="131,100,177,106,176,111,131,105"/>
+<area shape="rect" id="Node000004" href="$classPageVanne.html" title="QML : Page de détail et de programmation d&#39;une vanne." alt="" coords="189,153,282,179"/>
+<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="102,109,166,138,199,151,197,156,164,143,100,114"/>
+</map>
