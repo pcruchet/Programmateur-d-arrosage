@@ -1204,8 +1204,13 @@ void BoitierPilotageArrosage::sauvegarderFermetureVanne(uint8_t _idVanne)
  * @brief Applique la programmation horaire de chaque vanne en mode
  *        Programme.
  * @details Pour chacune des 4 vannes dont le mode est MODE_PROGRAMME,
- *          calcule la fenêtre d'arrosage [heure de début, heure de début +
- *          durée[ et compare l'heure système courante :
+ *          recalcule l'occurrence courante de la programmation périodique
+ *          (GestionnaireTemps::calculerOccurrenceCourante(), basée sur
+ *          l'heure de début d'origine et la fréquence, et non l'heure de
+ *          début brute qui ne correspond qu'à la toute première occurrence)
+ *          pour obtenir la fenêtre d'arrosage [occurrence courante,
+ *          occurrence courante + durée[ du jour, puis compare l'heure
+ *          système courante :
  *          - si l'heure système est dans la fenêtre et que la vanne est
  *            fermée et disponible (pas d'impulsion en cours), déclenche
  *            l'ouverture, attend activement la fin de l'impulsion physique
@@ -1233,11 +1238,13 @@ void BoitierPilotageArrosage::verifierProgrammations()
 
         if (prog.mode == ProtocoleArrosageServeur::MODE_PROGRAMME)
         {
-            String heureOuverture = prog.heure;
+            String heureOuverture = gestionnaireTemps->calculerOccurrenceCourante(
+                prog.mode, prog.heure, prog.frequence);
             String heureFermeture = gestionnaireTemps->ajouterMinutes(
                 heureOuverture, prog.duree);
 
-            if (heureSysteme >= heureOuverture && heureSysteme < heureFermeture)
+            if (heureOuverture.length() > 0 &&
+                heureSysteme >= heureOuverture && heureSysteme < heureFermeture)
             {
                 if (!vannes[idVanne]->estOuverte() && !vannes[idVanne]->estEnCours())
                 {

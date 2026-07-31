@@ -102,6 +102,33 @@ public:
                                    int _frequenceHeures) const;
 
     /**
+     * @brief Calcule l'occurrence courante (ou la plus récemment passée)
+     *        d'une programmation périodique, servant à déterminer si l'heure
+     *        actuelle se trouve dans une fenêtre d'arrosage.
+     * @details Le mode doit être 'P' (Programme) et la fréquence strictement
+     *          positive, sinon retourne une chaîne vide. Part de l'heure de
+     *          début fournie et avance par pas de _frequenceHeures heures
+     *          tant que l'occurrence suivante reste antérieure ou égale à
+     *          l'heure courante du RTC, afin d'obtenir la dernière échéance
+     *          survenue à ce jour (contrairement à calculerProchaineAlarme(),
+     *          qui retourne la prochaine échéance future). Si l'heure de
+     *          début elle-même est encore future, retourne une chaîne vide
+     *          (aucune occurrence n'a encore eu lieu).
+     * @param _mode             Mode de la vanne ('P' pour Programme, tout
+     *                          autre caractère produit un résultat vide).
+     * @param _heureDebutISO    Heure d'ouverture programmée, au format
+     *                          ISO8601.
+     * @param _frequenceHeures  Fréquence de répétition, en heures (doit être
+     *                          > 0).
+     * @return Occurrence courante au format ISO8601, ou chaîne vide si le
+     *         RTC est indisponible, le mode n'est pas 'P', la fréquence est
+     *         nulle/négative, ou aucune occurrence n'a encore eu lieu.
+     */
+    String calculerOccurrenceCourante(char _mode,
+                                      const String &_heureDebutISO,
+                                      int _frequenceHeures) const;
+
+    /**
      * @brief Ajoute une durée en minutes à une date ISO8601.
      * @details Utilisée notamment pour déduire l'heure de fermeture d'une
      *          vanne à partir de son heure d'ouverture et de sa durée

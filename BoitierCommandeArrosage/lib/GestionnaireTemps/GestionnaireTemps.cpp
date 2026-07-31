@@ -151,6 +151,54 @@ String GestionnaireTemps::calculerProchaineAlarme(char _mode,
 }
 
 /**
+ * @brief Calcule l'occurrence courante (ou la plus récemment passée) d'une
+ *        programmation périodique.
+ * @details Avance l'heure de début par pas de _frequenceHeures heures tant
+ *          que l'occurrence suivante reste antérieure ou égale à l'heure
+ *          courante du RTC, afin d'obtenir la dernière échéance survenue à
+ *          ce jour plutôt que la prochaine échéance future.
+ * @param _mode            Mode de la vanne ('P' requis).
+ * @param _heureDebutISO   Heure de début de la programmation, ISO8601.
+ * @param _frequenceHeures Période de répétition, en heures (doit être > 0).
+ * @return Occurrence courante au format ISO8601, ou chaîne vide si les
+ *         conditions (RTC disponible, mode 'P', fréquence > 0, au moins une
+ *         occurrence déjà passée) ne sont pas réunies.
+ */
+String GestionnaireTemps::calculerOccurrenceCourante(char _mode,
+                                                     const String &_heureDebutISO,
+                                                     int _frequenceHeures) const
+{
+    String occurrenceISO = "";
+
+    if (disponible)
+    {
+        if (_mode == 'P')
+        {
+            if (_frequenceHeures > 0)
+            {
+                DateTime maintenant   = rtc.now();
+                DateTime occurrence   = versDateTime(_heureDebutISO);
+                TimeSpan pasFrequence = TimeSpan(0, _frequenceHeures, 0, 0);
+
+                if (occurrence <= maintenant)
+                {
+                    DateTime suivante = occurrence + pasFrequence;
+                    while (suivante <= maintenant)
+                    {
+                        occurrence = suivante;
+                        suivante = suivante + pasFrequence;
+                    }
+
+                    occurrenceISO = versISO8601(occurrence);
+                }
+            }
+        }
+    }
+
+    return occurrenceISO;
+}
+
+/**
  * @brief Ajoute une durée en minutes à une date ISO8601.
  * @param _heureISO Date/heure de départ, ISO8601 (vide → résultat vide).
  * @param _minutes  Minutes à ajouter (peut être négatif).

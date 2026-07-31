@@ -155,6 +155,95 @@ void test_calculerProchaineAlarme_frequence_courte()
 }
 
 // ============================================================
+// Tests calculerOccurrenceCourante() — logique pure
+// ============================================================
+
+void test_calculerOccurrenceCourante_mode_manuel_retourne_vide()
+{
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-08T19:00:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('M', "2026-07-08T18:30:00", 24);
+
+    TEST_ASSERT_EQUAL_STRING("", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_frequence_nulle_retourne_vide()
+{
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-08T19:00:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T18:30:00", 0);
+
+    TEST_ASSERT_EQUAL_STRING("", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_premiere_occurrence_pas_encore_arrivee()
+{
+    // Heure système avant l'heure de début programmée : aucune occurrence
+    // n'a encore eu lieu
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-08T10:00:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T18:30:00", 24);
+
+    TEST_ASSERT_EQUAL_STRING("", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_dans_la_fenetre_du_jour()
+{
+    // Heure système dans la fenêtre d'arrosage du jour même (1re occurrence)
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-08T18:35:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T18:30:00", 24);
+
+    TEST_ASSERT_EQUAL_STRING("2026-07-08T18:30:00", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_recurrence_lendemain()
+{
+    // Reproduit le bug de reprogrammation : un jour après la date de
+    // début d'origine, à la même heure, avec une fréquence de 24h, on
+    // doit retrouver l'occurrence du jour (et non celle, périmée, du
+    // premier jour de programmation)
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-09T18:35:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T18:30:00", 24);
+
+    TEST_ASSERT_EQUAL_STRING("2026-07-09T18:30:00", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_rattrape_plusieurs_cycles_manques()
+{
+    // Simule une coupure secteur de 3 jours : doit retrouver l'occurrence
+    // du jour courant, pas celle du 8 juillet
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-11T18:35:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T18:30:00", 24);
+
+    TEST_ASSERT_EQUAL_STRING("2026-07-11T18:30:00", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_hors_fenetre_retourne_occurrence_passee()
+{
+    // Hors fenêtre d'arrosage (après la durée) : doit tout de même
+    // retourner l'occurrence du jour, à charge pour l'appelant de
+    // comparer avec la durée pour juger si on est encore dans la fenêtre
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-09T23:00:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T18:30:00", 24);
+
+    TEST_ASSERT_EQUAL_STRING("2026-07-09T18:30:00", resultat.c_str());
+}
+
+void test_calculerOccurrenceCourante_frequence_courte()
+{
+    // Fréquence de 6h, plusieurs occurrences possibles dans la journée
+    gestionnaireTemps.ecrireHeureSysteme("2026-07-08T13:00:00");
+
+    String resultat = gestionnaireTemps.calculerOccurrenceCourante('P', "2026-07-08T06:00:00", 6);
+
+    TEST_ASSERT_EQUAL_STRING("2026-07-08T12:00:00", resultat.c_str());
+}
+
+// ============================================================
 // Tests alarme matérielle (DS3231)
 // ============================================================
 
@@ -256,6 +345,16 @@ void setup()
     RUN_TEST(test_calculerProchaineAlarme_avance_dun_jour);
     RUN_TEST(test_calculerProchaineAlarme_rattrape_plusieurs_cycles_manques);
     RUN_TEST(test_calculerProchaineAlarme_frequence_courte);
+
+    // ── calculerOccurrenceCourante() ─────────────────────────
+    RUN_TEST(test_calculerOccurrenceCourante_mode_manuel_retourne_vide);
+    RUN_TEST(test_calculerOccurrenceCourante_frequence_nulle_retourne_vide);
+    RUN_TEST(test_calculerOccurrenceCourante_premiere_occurrence_pas_encore_arrivee);
+    RUN_TEST(test_calculerOccurrenceCourante_dans_la_fenetre_du_jour);
+    RUN_TEST(test_calculerOccurrenceCourante_recurrence_lendemain);
+    RUN_TEST(test_calculerOccurrenceCourante_rattrape_plusieurs_cycles_manques);
+    RUN_TEST(test_calculerOccurrenceCourante_hors_fenetre_retourne_occurrence_passee);
+    RUN_TEST(test_calculerOccurrenceCourante_frequence_courte);
 
     // ── Alarme matérielle ─────────────────────────────────────
     RUN_TEST(test_programmerAlarme_puis_effacer_sans_crash);
