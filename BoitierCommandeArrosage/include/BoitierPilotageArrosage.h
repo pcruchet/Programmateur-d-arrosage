@@ -25,7 +25,6 @@
 /// définies dans Debug.h). À commenter pour désactiver les traces en
 /// production (réduit la taille du binaire et le temps de boot).
 #define DEBUG_SERIAL // ← commenter pour désactiver en production
-
 #include <Arduino.h>
 #include <Wire.h>
 #include <esp_sleep.h>

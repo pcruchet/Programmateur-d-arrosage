@@ -1070,12 +1070,12 @@ CauseReveil BoitierPilotageArrosage::determinerCauseReveil() const
  */
 void BoitierPilotageArrosage::configurerSourcesReveil()
 {
-    esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_ALL); // purge toutes les sources (dont le timer résiduel du light sleep)
+   esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_ALL); // purge toutes les sources (dont le timer résiduel du light sleep)
 
     esp_sleep_enable_ext0_wakeup((gpio_num_t)BROCHE_IRQ_RTC, LOW);
 
     uint64_t masqueBP1 = (1ULL << BROCHE_BP1);
-    esp_sleep_enable_ext1_wakeup(masqueBP1, ESP_EXT1_WAKEUP_ALL_LOW);
+    esp_sleep_enable_ext1_wakeup(masqueBP1, ESP_EXT1_WAKEUP_ALL_LOW); 
 }
 
 // ============================================================
