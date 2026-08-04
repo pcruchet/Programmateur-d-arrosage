@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="2.1"
+     xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+     xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:type="uml:Model" xmi:id="model_qt" name="ApplicationArrosage">
+
+    <packagedElement xmi:type="uml:Package" xmi:id="pkg_qt" name="ControleurArrosage">
+
+      <!-- ═══════════════════════════════════════════
+           Énumération Vanne::MODE
+      ═══════════════════════════════════════════ -->
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_mode" name="MODE">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="mode_manuel"     name="Manuel"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="mode_programme"  name="Programme"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="mode_auto"       name="Automatique"/>
+      </packagedElement>
+
+      <!-- ═══════════════════════════════════════════
+           Énumération Vanne::PROGRAMME_STATE
+      ═══════════════════════════════════════════ -->
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_progstate" name="PROGRAMME_STATE">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="ps_inactif"  name="Inactif"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="ps_actif"    name="Actif"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="ps_suspendu" name="Suspendu"/>
+      </packagedElement>
+
+      <!-- ═══════════════════════════════════════════
+           Classe Vanne (Qt)
+      ═══════════════════════════════════════════ -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_vanne_qt" name="Vanne">
+        <!-- Attributs privés -->
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_id"          name="id"           visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_nom"         name="nom"          visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_etat"        name="etat"         visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_mode"        name="mode"         visibility="private" type="enum_mode"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_progstate"   name="programmeState" visibility="private" type="enum_progstate"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_debut"       name="debut"        visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_duree"       name="duree"        visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_freq"        name="frequence"    visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="vq_sync"        name="synchronisee" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <!-- Opérations publiques -->
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getId"      name="getId"         visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getEtat"    name="getEtat"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setEtat"    name="setEtat"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getMode"    name="getMode"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setMode"    name="setMode"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getPS"      name="getProgrammeState" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setPS"      name="setProgrammeState" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getDebut"   name="getDebut"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setDebut"   name="setDebut"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getDuree"   name="getDuree"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setDuree"   name="setDuree"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getFreq"    name="getFrequence"  visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setFreq"    name="setFrequence"  visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_estSync"    name="estSynchronisee" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setSynch"   name="setSynchronisee" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_getNom"     name="getNom"        visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="vq_setNom"     name="setNom"        visibility="public"/>
+      </packagedElement>
+
+      <!-- ═══════════════════════════════════════════
+           Classe CommunicationESP32
+      ═══════════════════════════════════════════ -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_com" name="CommunicationESP32">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="com_socket" name="socket" visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <!-- Opérations publiques -->
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_connIP"    name="connecterESP32"    visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_deconn"    name="deconnecterESP32"  visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_envoyer"   name="envoyerMessage"    visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_estConn"   name="estConnecte"       visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="com_estConn_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <!-- Signaux Qt (opérations stéréotypées signal) -->
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_sig_msg"   name="messageReceived"   visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_sig_conn"  name="connected"         visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_sig_deco"  name="disconnected"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="com_sig_err"   name="errorOccurred"     visibility="public"/>
+      </packagedElement>
+
+      <!-- ═══════════════════════════════════════════
+           Classe ArrosageProtocole
+      ═══════════════════════════════════════════ -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_proto_qt" name="ArrosageProtocole">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_parse"      name="parse"            visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_ouvrir"     name="ouvrirVanne"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_fermer"     name="fermerVanne"      visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_setProg"    name="setProgrammation" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_setMode"    name="setMode"          visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_getEtat"    name="demanderEtatVanne" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_getMode"    name="demanderMode"     visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_getProg"    name="demanderProgrammation" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_setTime"    name="setTime"          visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ap_getSystem"  name="demanderSysteme"  visibility="public"/>
+      </packagedElement>
+
+      <!-- ═══════════════════════════════════════════
+           Classe ControleurArrosage
+           (hérite de QAbstractListModel)
+      ═══════════════════════════════════════════ -->
+      <packagedElement xmi:type="uml:Class" xmi:id="cls_ctrl" name="ControleurArrosage">
+        <!-- Attributs privés -->
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ca_connecte"  name="connecte"       visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ca_ip"        name="adresseIp"      visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="ca_port"      name="port"           visibility="private">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <!-- Q_INVOKABLE : actions depuis QML -->
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_toggle"   name="toggleEtat"         visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_manuel"   name="passerEnManuel"     visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_prog"     name="activerProgramme"   visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_auto"     name="activerAutomatique" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_suspend"  name="suspendProgramme"   visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_resume"   name="resumeProgramme"    visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_setDuree" name="setDuree"           visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_setFreq"  name="setFrequence"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_setDebut" name="setDebut"           visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_envProg"  name="envoyerProgrammation" visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_rafr"     name="rafraichir"         visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_getV"     name="vanne"              visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_getIP"    name="getAdresseIp"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_setIP"    name="setAdresseIp"       visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_getPort"  name="getPort"            visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_setPort"  name="setPort"            visibility="public"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="ca_estConn"  name="estConnecte"        visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="ca_estConn_ret" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+
+      <!-- ═══════════════════════════════════════════
+           ASSOCIATIONS
+      ═══════════════════════════════════════════ -->
+
+      <!-- ControleurArrosage ──composition──> Vanne [0..4] -->
+      <packagedElement xmi:type="uml:Association" xmi:id="assoc_ca_vanne">
+        <memberEnd xmi:idref="assoc_ca_v_src"/>
+        <memberEnd xmi:idref="assoc_ca_v_tgt"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="assoc_ca_v_src" association="assoc_ca_vanne" type="cls_ctrl" aggregation="composite" visibility="private"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="assoc_ca_v_tgt" association="assoc_ca_vanne" name="vannes" type="cls_vanne_qt" visibility="private">
+          <lowerValue xmi:type="uml:LiteralInteger" value="0"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" value="4"/>
+        </ownedEnd>
+      </packagedElement>
+
+      <!-- ControleurArrosage ──composition──> CommunicationESP32 -->
+      <packagedElement xmi:type="uml:Association" xmi:id="assoc_ca_com">
+        <memberEnd xmi:idref="assoc_ca_com_src"/>
+        <memberEnd xmi:idref="assoc_ca_com_tgt"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="assoc_ca_com_src" association="assoc_ca_com" type="cls_ctrl" aggregation="composite" visibility="private"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="assoc_ca_com_tgt" association="assoc_ca_com" name="com" type="cls_com" visibility="private">
+          <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+          <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+
+      <!-- ControleurArrosage ──composition──> ArrosageProtocole -->
+      <packagedElement xmi:type="uml:Association" xmi:id="assoc_ca_proto">
+        <memberEnd xmi:idref="assoc_ca_pr_src"/>
+        <memberEnd xmi:idref="assoc_ca_pr_tgt"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="assoc_ca_pr_src" association="assoc_ca_proto" type="cls_ctrl" aggregation="composite" visibility="private"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="assoc_ca_pr_tgt" association="assoc_ca_proto" name="protocole" type="cls_proto_qt" visibility="private">
+          <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+          <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+        </ownedEnd>
+      </packagedElement>
+
+    </packagedElement>
+  </uml:Model>
+</XMI>
