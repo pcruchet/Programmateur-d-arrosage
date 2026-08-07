@@ -128,7 +128,7 @@ enum class EtatBoitier
     ARROSAGE,               ///< Vérifie et applique la programmation horaire des vannes (ouverture/fermeture programmées).
     ATTENTE_CONNEXION,     ///< Démarre le WiFi et attend la connexion d'un client WebSocket (avec timeout).
     DIALOGUE,              ///< Traite les requêtes du client connecté et vérifie périodiquement la programmation.
-    LIGHT_SLEEP,           ///< Veille légère (RAM conservée) pendant qu'une vanne reste ouverte, entre deux vérifications.
+    SOMMEIL_LEGER,          ///< Veille légère (RAM conservée) pendant qu'une vanne reste ouverte, entre deux vérifications.
     ENDORMISSEMENT          ///< Calcule la prochaine alarme RTC, configure les sources de réveil et entre en deep sleep.
 };
 

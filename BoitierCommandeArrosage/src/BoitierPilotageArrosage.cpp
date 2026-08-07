@@ -137,7 +137,7 @@ void BoitierPilotageArrosage::controler()
         traiterDialogue();
         break;
 
-    case EtatBoitier::LIGHT_SLEEP:
+    case EtatBoitier::SOMMEIL_LEGER:
         traiterLightSleep();
         break;
 
@@ -347,7 +347,7 @@ void BoitierPilotageArrosage::traiterArrosage()
     else
     {
         DEBUG("Vannes ouvertes → LIGHT SLEEP");
-        etatCourant = EtatBoitier::LIGHT_SLEEP;
+        etatCourant = EtatBoitier::SOMMEIL_LEGER;
     }
 }
 
@@ -423,7 +423,7 @@ void BoitierPilotageArrosage::traiterAttenteConnexion()
  *            de veille au client, éteint l'affichage et bascule vers
  *            ENDORMISSEMENT ;
  *          - la détection d'une déconnexion normale du client : éteint
- *            l'affichage et bascule vers LIGHT_SLEEP si une vanne reste
+ *            l'affichage et bascule vers SOMMEIL_LEGER si une vanne reste
  *            ouverte, ou vers ATTENTE_CONNEXION (sans relancer le WiFi déjà
  *            actif) si toutes les vannes sont fermées.
  */
@@ -489,7 +489,7 @@ void BoitierPilotageArrosage::traiterDialogue()
 
         if (!toutesVannesFermees())
         {
-            etatCourant = EtatBoitier::LIGHT_SLEEP;
+            etatCourant = EtatBoitier::SOMMEIL_LEGER;
         }
         else
         {
