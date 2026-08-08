@@ -107,7 +107,7 @@ public:
     void setOnMessage(std::function<void(const String &)> _callback);
 
 private:
-    AsyncWebServer  serveur;   ///< Serveur HTTP asynchrone sous-jacent (ESPAsyncWebServer), écoutant sur PORT_SERVEUR.
+    AsyncWebServer serveur;   ///< Serveur HTTP asynchrone sous-jacent (ESPAsyncWebServer), écoutant sur PORT_SERVEUR.
     AsyncWebSocket  ws;         ///< Point de terminaison WebSocket ("/ws") attaché au serveur HTTP.
     AfficheurOLED  &afficheur; ///< Référence vers l'afficheur OLED, mis à jour lors des événements de connexion.
     volatile bool   connected;         ///< Indique si un client WebSocket est actuellement connecté (accès à un seul client à la fois) ; mis à jour depuis la tâche AsyncTCP (onEvent()) et lu depuis loop(), donc marqué volatile. Initialisé dans la liste d'initialisation du constructeur.

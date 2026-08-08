@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmi.version="2.1"
+     xmlns:xmi="http://schema.omg.org/spec/XMI/2.1"
+     xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:type="uml:Model" xmi:id="model_fw" name="BoitierCommandeArrosage">
+  <packagedElement xmi:type="uml:Package" xmi:id="pkg_fw" name="BoitierCommandeArrosage">
+
+  <!-- ═══════ EtatBoitier ═══════ -->
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_etat" name="EtatBoitier">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_dem"  name="DEMARRAGE"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_det"  name="DETERMINER_REVEIL"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_res"  name="RESTAURER_ETAT_VANNES"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_arr"  name="ARROSAGE"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_att"  name="ATTENTE_CONNEXION"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_dia"  name="DIALOGUE"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_som"  name="SOMMEIL_LEGER"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="etat_end"  name="ENDORMISSEMENT"/>
+  </packagedElement>
+
+  <!-- ═══════ CauseReveil ═══════ -->
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="enum_cause" name="CauseReveil">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="cause_prem" name="PREMIER_DEMARRAGE"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="cause_rtc"  name="ALARME_RTC"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="cause_bp"   name="BOUTON_POUSSOIR"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="cause_tim"  name="LIGHT_SLEEP_TIMER"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="cause_inc"  name="INCONNUE"/>
+  </packagedElement>
+
+  <!-- ═══════ ProgrammationVanne (struct) ═══════ -->
+  <packagedElement xmi:type="uml:DataType" xmi:id="struct_prog" name="ProgrammationVanne">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pv_mode" name="mode" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pv_heure" name="heure" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pv_duree" name="duree" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pv_freq" name="frequence" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+
+  <!-- ═══════ EtatVanne (struct) ═══════ -->
+  <packagedElement xmi:type="uml:DataType" xmi:id="struct_etatv" name="EtatVanne">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ev_ouv" name="ouverte" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ev_heure" name="heureOuverture" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+
+  <!-- ═══════ RequeteArrosage (struct) ═══════ -->
+  <packagedElement xmi:type="uml:DataType" xmi:id="struct_req" name="RequeteArrosage">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_type" name="type" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_cmd" name="commande" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_id" name="idVanne" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_mode" name="mode" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_heure" name="heure" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_duree" name="duree" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_freq" name="frequence" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="rq_valide" name="valide" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+
+  <!-- ═══════ MesureBatterie (struct) ═══════ -->
+  <packagedElement xmi:type="uml:DataType" xmi:id="struct_mesure" name="MesureBatterie">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_tens" name="tensionV" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_cour" name="courantMa" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_puis" name="puissanceMw" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_pct" name="pourcentage" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_chg" name="enCharge" visibility="public">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+  </packagedElement>
+
+  <!-- ═══════ Vanne ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_vanne" name="Vanne">
+    <!-- Attributs privés -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_sel"    name="brocheSelection"  visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_ina"    name="inA"              visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_inb"    name="inB"              visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_dur"    name="dureeImpulsion"   visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_ouv"    name="ouverte"          visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_enc"    name="enCours"          visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_cib"    name="etatCible"        visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_deb"    name="debutImpulsion"   visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="v_mux"    name="mux"              visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_ouv" name="ouvrir" visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_fer" name="fermer" visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_upd" name="update" visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_setd" name="setDureeImpulsion" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="v_setd_p" name="_dureeMs" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_esto" name="estOuverte" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="v_esto_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_estc" name="estEnCours" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="v_estc_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_sete" name="setEtatLogique" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="v_sete_p" name="_ouverte" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <!-- Méthodes privées -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_sel"  name="selectionner"   visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_des"  name="deselectionner" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_arr"  name="arreter"         visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="v_op_dem"  name="demarrerImpulsion" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="v_dem_p" name="_ouvrir" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+
+  <!-- ═══════ AfficheurOLED ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_oled" name="AfficheurOLED">
+    <!-- Attributs privés -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ol_mw"  name="modeWifi"       visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ol_ip"  name="adresseIP"      visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ol_cc"  name="clientConnecte"  visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ol_ev"  name="etatsVannes[4]" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ol_nv"  name="nbVannes"       visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ol_hs"  name="heureSysteme"   visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_init"   name="initialiser"        visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_init_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_smw"    name="setModeWifi"        visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_smw_p" name="_mode" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_sip"    name="setAdresseIP"       visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_sip_p" name="_ip" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_scc"    name="setClientConnecte"  visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_scc_p" name="_connecte" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_sev"    name="setEtatVannes"      visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_sev_p1" name="_etats"  direction="in"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_sev_p2" name="_nb"     direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_shs"    name="setHeureSysteme"    visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_shs_p" name="_heure" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_raf"    name="rafraichir"         visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_bat"    name="afficherMesureBatterie" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_bat_p1" name="_mesure"           direction="in" type="struct_mesure"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ol_bat_p2" name="_capteurDisponible" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_ete"    name="eteindre"           visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_all"    name="allumer"            visibility="public"/>
+    <!-- Méthodes privées -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_dl1"    name="dessinerLigne1"     visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_dl2"    name="dessinerLigne2"     visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_dl3"    name="dessinerLigne3"     visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ol_dl4"    name="dessinerLigne4"     visibility="private"/>
+  </packagedElement>
+
+  <!-- Héritage AfficheurOLED → Adafruit_SSD1306 -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_ssd" name="Adafruit_SSD1306">
+    <ownedComment xmi:type="uml:Comment" body="Classe externe — bibliothèque Adafruit SSD1306 v2.5.17"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="real_oled_ssd"
+    client="cls_oled" supplier="cls_ssd"/>
+  <packagedElement xmi:type="uml:Generalization" xmi:id="gen_oled_ssd">
+    <general xmi:idref="cls_ssd"/>
+  </packagedElement>
+
+  <!-- ═══════ GestionnaireTemps ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_gt" name="GestionnaireTemps">
+    <!-- Attributs privés -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="gt_rtc"  name="rtc"       visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="gt_irq"  name="brocheIRQ" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="gt_dispo" name="disponible" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_init" name="initialiser" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_init_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_rtcd" name="rtcDisponible" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_rtcd_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_lhs" name="lireHeureSysteme" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_lhs_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_ehs" name="ecrireHeureSysteme" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_ehs_p" name="_heureISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_cpa" name="calculerProchaineAlarme" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_cpa_p1" name="_mode"             direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_cpa_p2" name="_heureDebutISO"    direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_cpa_p3" name="_frequenceHeures"  direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_cpa_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_coc" name="calculerOccurrenceCourante" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_coc_p1" name="_mode"            direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_coc_p2" name="_heureDebutISO"   direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_coc_p3" name="_frequenceHeures" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_coc_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_am" name="ajouterMinutes" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_am_p1" name="_heureISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_am_p2" name="_minutes" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_am_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_pa" name="programmerAlarme" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_pa_p" name="_heureISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_ad" name="alarmeDeclenchee" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_ad_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_ea"  name="effacerAlarme"  visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_eja" name="endormirJusquaAlarme" visibility="public"/>
+    <!-- Méthodes privées -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_vdt" name="versDateTime" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_vdt_p" name="_heureISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="gt_vi" name="versISO8601" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="gt_vi_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+
+  <!-- ═══════ StockageProgrammationVannes ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_spv" name="StockageProgrammationVannes">
+    <!-- Constantes statiques -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="spv_nbmax"  name="NB_VANNES_MAX"   visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" value="4"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="spv_mdef"   name="MODE_DEFAUT"     visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralString" value="M"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="spv_ddef"   name="DUREE_DEFAUT"    visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" value="0"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="spv_fdef"   name="FREQUENCE_DEFAUT" visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" value="0"/>
+    </ownedAttribute>
+    <!-- Attribut privé -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="spv_pref" name="preferences" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_init" name="initialiser" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_init_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_ep" name="ecrireProgrammation" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_ep_p1" name="_idVanne"       direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_ep_p2" name="_programmation" direction="in" type="struct_prog"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_lp" name="lireProgrammation" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_lp_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_lp_r" direction="return" type="struct_prog"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_em" name="ecrireMode" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_em_p1" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_em_p2" name="_mode" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_lm" name="lireMode" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_lm_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_lm_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_rv" name="reinitialiserVanne" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_rv_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_rt" name="reinitialiserTout" visibility="public"/>
+    <!-- Méthodes privées -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_cm"  name="cleMode"       visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_ch"  name="cleHeure"      visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_cd"  name="cleDuree"      visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_cf"  name="cleFrequence"  visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="spv_iv"  name="idVanneValide" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="spv_iv_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+
+  <!-- ═══════ StockageEtatVannes ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_sev" name="StockageEtatVannes">
+    <!-- Constantes statiques -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="sev_nbmax"  name="NB_VANNES_MAX"   visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" value="4"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="sev_marge"  name="MARGE_SECURITE_MS" visibility="public" isStatic="true" isReadOnly="true">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      <defaultValue xmi:type="uml:LiteralInteger" value="900000"/>
+    </ownedAttribute>
+    <!-- Attribut privé -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="sev_pref" name="preferences" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_init" name="initialiser" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_init_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_se" name="sauvegarderEtat" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_se_p1" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_se_p2" name="_etat" direction="in" type="struct_etatv"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_so" name="sauvegarderOuverture" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_so_p1" name="_idVanne"  direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_so_p2" name="_heureISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_sf" name="sauvegarderFermeture" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_sf_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_le" name="lireEtat" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_le_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_le_r" direction="return" type="struct_etatv"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_vo" name="vanneOuverte" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_vo_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_vo_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_uvo" name="uneVanneOuverte" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_uvo_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_dd" name="delaiDepasse" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dd_p1" name="_idVanne"         direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dd_p2" name="_dureeMinutes"    direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dd_p3" name="_heureActuelleISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dd_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_rv" name="reinitialiserVanne" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_rv_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_rt" name="reinitialiserTout" visibility="public"/>
+    <!-- Méthodes privées -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_co"  name="cleOuverte"   visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_ch"  name="cleHeure"     visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_iv"  name="idVanneValide" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_iv_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="sev_dm"  name="diffMinutes"  visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dm_p1" name="_heureDebutISO" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dm_p2" name="_heureFinISO"   direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="sev_dm_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+
+  <!-- ═══════ ServeurWebSocket ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_ws" name="ServeurWebSocket">
+    <!-- Attributs privés -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ws_srv"  name="serveur"   visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ws_ws"   name="ws"        visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ws_aff"  name="afficheur" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ws_con"  name="connected" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="ws_cb"   name="onMessage" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_dap" name="demarrerAP"  visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_dst" name="demarrerSTA" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ws_dst_p1" name="_ssid"     direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ws_dst_p2" name="_password" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_env" name="envoyerMessage" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ws_env_p" name="_message" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_cc" name="clientConnecte" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ws_cc_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_fc"  name="fermerConnexions"  visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_som" name="setOnMessage"       visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="ws_som_p" name="_callback" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <!-- Méthodes privées -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_iws" name="initialiserWebSocket" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="ws_oe"  name="onEvent"              visibility="private"/>
+  </packagedElement>
+
+  <!-- ═══════ ProtocoleArrosageServeur ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_proto" name="ProtocoleArrosageServeur">
+    <!-- Constantes statiques -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_ver"   name="VERSION"         visibility="public" isStatic="true" isReadOnly="true">
+      <defaultValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_tq"    name="TYPE_QUERY"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_tr"    name="TYPE_REPONSE"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_tc"    name="TYPE_COMMANDE"    visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_ta"    name="TYPE_ACK"         visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_te"    name="TYPE_ERREUR"      visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_tn"    name="TYPE_NOTIF"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cgt"   name="CMD_GET_TIME"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cst"   name="CMD_SET_TIME"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cge"   name="CMD_GET_ETAT"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cgm"   name="CMD_GET_MODE"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_csm"   name="CMD_SET_MODE"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cgp"   name="CMD_GET_PROG"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_csp"   name="CMD_SET_PROG"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_co"    name="CMD_OUVRIR"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cf"    name="CMD_FERMER"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cg"    name="CMD_PING"         visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cgs"   name="CMD_GET_SYSTEM"   visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_cv"    name="CMD_VEILLE"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_mm"    name="MODE_MANUEL"      visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_mp"    name="MODE_PROGRAMME"   visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_ma"    name="MODE_AUTOMATIQUE" visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_ef"    name="ETAT_FERMEE"      visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_eo"    name="ETAT_OUVERTE"     visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_e0"    name="ERREUR_AUCUNE"              visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_e1"    name="ERREUR_VANNE_INEXISTANTE"   visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_e2"    name="ERREUR_MODE_INVALIDE"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_e3"    name="ERREUR_PROG_INVALIDE"       visibility="public" isStatic="true" isReadOnly="true"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="pr_e4"    name="ERREUR_RTC_INDISPONIBLE"    visibility="public" isStatic="true" isReadOnly="true"/>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_dec"  name="decoder"             visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="pr_dec_p" name="_message" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="pr_dec_r" direction="return" type="struct_req"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_crh"  name="creerReponseHeure"         visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cre"  name="creerReponseEtat"          visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_crm"  name="creerReponseMode"          visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_crp"  name="creerReponseProgrammation" visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_crg"  name="creerReponsePing"          visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_crs"  name="creerReponseSysteme"       visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_ca"   name="creerAck"                  visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cav"  name="creerAckVanne"             visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cerr" name="creerErreur"               visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cnev" name="creerNotifEtatVanne"        visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cnm"  name="creerNotifMode"            visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cnp"  name="creerNotifProgrammation"   visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_cnve" name="creerNotifVeille"           visibility="public"/>
+    <!-- Méthode privée -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="pr_ct"   name="creerTrame"               visibility="private"/>
+  </packagedElement>
+
+  <!-- ═══════ MesureBatteries ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_mb" name="MesureBatteries">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_adr"   name="adresseI2C"     visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_dfl"   name="disponibleFlag" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="mb_ina"   name="ina219"         visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_init" name="initialiser"    visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_init_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_disp" name="disponible"     visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_disp_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_lm"   name="lireMesure"       visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_lm_r" direction="return" type="struct_mesure"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_lt"   name="lireTension"      visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_lt_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_lc"   name="lireCourant"      visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_lc_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_lp"   name="lirePuissance"    visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_lp_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_ep"   name="estimerPourcentage" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_ep_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="mb_ec"   name="estEnCharge"      visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="mb_ec_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+
+  <!-- ═══════ BoutonPoussoir ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_bp" name="BoutonPoussoir">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bp_br"   name="broche"           visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bp_dar"  name="delaiAntiRebond"  visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bp_es"   name="etatStable"       visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bp_epl"  name="etatPrecedentLu"  visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bp_ea"   name="evenementAppui"   visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bp_dcm"  name="dernierChangementMs" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bp_upd" name="update"     visibility="public"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bp_fa"  name="frontAppui" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bp_fa_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bp_ea2" name="estAppuye"  visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bp_ea2_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+
+  <!-- ═══════ BoitierPilotageArrosage ═══════ -->
+  <packagedElement xmi:type="uml:Class" xmi:id="cls_bpa" name="BoitierPilotageArrosage">
+    <!-- Attributs privés — composants -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_aff"  name="afficheur"              visibility="private" type="cls_oled"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_ws"   name="serveurWebSocket"       visibility="private" type="cls_ws"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_pr"   name="protocole"              visibility="private" type="cls_proto"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_gt"   name="gestionnaireTemps"      visibility="private" type="cls_gt"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_sp"   name="stockage"               visibility="private" type="cls_spv"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_se"   name="stockageEtat"           visibility="private" type="cls_sev"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_va"   name="vannes[4]"              visibility="private" type="cls_vanne"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_mb"   name="mesureBatteries"        visibility="private" type="cls_mb"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_bp2"  name="bp2"                    visibility="private" type="cls_bp"/>
+    <!-- Attributs privés — état -->
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_ec"   name="etatCourant"            visibility="private" type="enum_etat"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_cr"   name="causeReveil"            visibility="private" type="enum_cause"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_dmr"  name="dernierMessageRecuMs"   visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_dro"  name="dernierRafraichissementOledMs" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_dvp"  name="dernierVerificationProgMs"    visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_wd"   name="wifiDemarre"            visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_aba"  name="affichageBatterieActif" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="bpa_fab"  name="finAffichageBatterieMs" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <!-- Méthodes publiques -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_init" name="initialiser" visibility="public">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_init_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_ctrl" name="controler" visibility="public"/>
+    <!-- Méthodes privées — états -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_td"   name="traiterDemarrage"             visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tdr"  name="traiterDeterminerReveil"      visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_trev" name="traiterRestaurerEtatVannes"   visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tarr" name="traiterArrosage"              visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tac"  name="traiterAttenteConnexion"      visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tdi"  name="traiterDialogue"              visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tls"  name="traiterLightSleep"            visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_ten"  name="traiterEndormissement"        visibility="private"/>
+    <!-- Méthodes privées — réveil -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_dcr"  name="determinerCauseReveil"        visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_dcr_r" direction="return" type="enum_cause"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_csr"  name="configurerSourcesReveil"      visibility="private"/>
+    <!-- Méthodes privées — protocole -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_omr"  name="onMessageRecu"               visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_omr_p" name="_message" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tr"   name="traiterRequete"              visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_tr_p" name="_requete" direction="in" type="struct_req"/>
+    </ownedOperation>
+    <!-- Méthodes privées — utilitaires vannes -->
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_vpi"  name="vanneParId"                  visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_vpi_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_vpi_r" direction="return" type="cls_vanne"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_tvf"  name="toutesVannesFermees"         visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_tvf_r" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_mav"  name="mettreAJourAffichageVannes"           visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_mavc" name="mettreAJourAffichageVannesAvecCible"   visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_mavc_p1" name="_idVanneCible" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_mavc_p2" name="_etatCible" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_sov"  name="sauvegarderOuvertureVanne"   visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_sov_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_sfv"  name="sauvegarderFermetureVanne"   visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="bpa_sfv_p" name="_idVanne" direction="in">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_vp"   name="verifierProgrammations"      visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="bpa_vab"  name="verifierAffichageBatterie"   visibility="private"/>
+  </packagedElement>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ASSOCIATIONS — Compositions depuis BoitierPilotageArrosage
+  ═══════════════════════════════════════════════════════ -->
+
+  <!-- → AfficheurOLED [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_oled">
+    <memberEnd xmi:idref="asc_bpa_oled_src"/>
+    <memberEnd xmi:idref="asc_bpa_oled_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_oled_src" association="asc_bpa_oled" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_oled_tgt" association="asc_bpa_oled" name="afficheur" type="cls_oled" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → ServeurWebSocket [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_ws">
+    <memberEnd xmi:idref="asc_bpa_ws_src"/>
+    <memberEnd xmi:idref="asc_bpa_ws_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_ws_src" association="asc_bpa_ws" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_ws_tgt" association="asc_bpa_ws" name="serveurWebSocket" type="cls_ws" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → ProtocoleArrosageServeur [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_pr">
+    <memberEnd xmi:idref="asc_bpa_pr_src"/>
+    <memberEnd xmi:idref="asc_bpa_pr_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_pr_src" association="asc_bpa_pr" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_pr_tgt" association="asc_bpa_pr" name="protocole" type="cls_proto" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → GestionnaireTemps [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_gt">
+    <memberEnd xmi:idref="asc_bpa_gt_src"/>
+    <memberEnd xmi:idref="asc_bpa_gt_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_gt_src" association="asc_bpa_gt" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_gt_tgt" association="asc_bpa_gt" name="gestionnaireTemps" type="cls_gt" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → StockageProgrammationVannes [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_spv">
+    <memberEnd xmi:idref="asc_bpa_spv_src"/>
+    <memberEnd xmi:idref="asc_bpa_spv_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_spv_src" association="asc_bpa_spv" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_spv_tgt" association="asc_bpa_spv" name="stockage" type="cls_spv" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → StockageEtatVannes [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_sev">
+    <memberEnd xmi:idref="asc_bpa_sev_src"/>
+    <memberEnd xmi:idref="asc_bpa_sev_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_sev_src" association="asc_bpa_sev" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_sev_tgt" association="asc_bpa_sev" name="stockageEtat" type="cls_sev" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → Vanne [4] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_van">
+    <memberEnd xmi:idref="asc_bpa_van_src"/>
+    <memberEnd xmi:idref="asc_bpa_van_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_van_src" association="asc_bpa_van" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_van_tgt" association="asc_bpa_van" name="vannes" type="cls_vanne" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="4"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="4"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → MesureBatteries [1] -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_mb">
+    <memberEnd xmi:idref="asc_bpa_mb_src"/>
+    <memberEnd xmi:idref="asc_bpa_mb_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_mb_src" association="asc_bpa_mb" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_mb_tgt" association="asc_bpa_mb" name="mesureBatteries" type="cls_mb" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- → BoutonPoussoir [1] (bp2) -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_bpa_bp">
+    <memberEnd xmi:idref="asc_bpa_bp_src"/>
+    <memberEnd xmi:idref="asc_bpa_bp_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_bp_src" association="asc_bpa_bp" type="cls_bpa" aggregation="composite" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_bpa_bp_tgt" association="asc_bpa_bp" name="bp2" type="cls_bp" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- Agrégation ServeurWebSocket → AfficheurOLED (référence reçue au constructeur) -->
+  <packagedElement xmi:type="uml:Association" xmi:id="asc_ws_oled">
+    <memberEnd xmi:idref="asc_ws_oled_src"/>
+    <memberEnd xmi:idref="asc_ws_oled_tgt"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_ws_oled_src" association="asc_ws_oled" type="cls_ws" aggregation="shared" visibility="private"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="asc_ws_oled_tgt" association="asc_ws_oled" name="afficheur" type="cls_oled" visibility="private">
+      <lowerValue xmi:type="uml:LiteralInteger" value="1"/>
+      <upperValue xmi:type="uml:LiteralInteger" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+
+  <!-- Héritage AfficheurOLED ──▷ Adafruit_SSD1306 -->
+  <packagedElement xmi:type="uml:Generalization" xmi:id="gen_oled"
+    specific="cls_oled" general="cls_ssd"/>
+
+  </packagedElement>
+  </uml:Model>
+</XMI>
