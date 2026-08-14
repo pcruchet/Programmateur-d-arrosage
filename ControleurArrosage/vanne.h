@@ -155,17 +155,17 @@ signals:
 
 private:
 
-    bool m_etat;                    ///< État ouvert (true) / fermé (false) connu de la vanne.
-    MODE m_mode;                    ///< Mode courant de la vanne.
-    PROGRAM_STATE m_programmeState; ///< État d'activation de la programmation.
+    bool etat;                    ///< État ouvert (true) / fermé (false) connu de la vanne.
+    MODE mode;                    ///< Mode courant de la vanne.
+    PROGRAM_STATE programmeState; ///< État d'activation de la programmation.
 
-    QString m_nom; ///< Nom affiché de la vanne.
+    QString nom; ///< Nom affiché de la vanne.
 
-    QDateTime m_debut; ///< Heure de début programmée du prochain cycle d'arrosage.
-    int m_duree;       ///< Durée d'arrosage programmée, en minutes.
-    int m_frequence;   ///< Fréquence de répétition programmée, en heures.
+    QDateTime debut; ///< Heure de début programmée du prochain cycle d'arrosage.
+    int duree;       ///< Durée d'arrosage programmée, en minutes.
+    int frequence;   ///< Fréquence de répétition programmée, en heures.
 
-    bool m_synchronisee; ///< true si l'état ci-dessus reflète une confirmation de l'ESP32 (et non une valeur par défaut).
+    bool synchronisee; ///< true si l'état ci-dessus reflète une confirmation de l'ESP32 (et non une valeur par défaut).
     int id;               ///< Identifiant de la vanne (1 à 4).
 };
 

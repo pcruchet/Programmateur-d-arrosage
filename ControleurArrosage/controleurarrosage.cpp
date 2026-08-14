@@ -20,13 +20,13 @@ ControleurArrosage::ControleurArrosage(int _nbVannes, QObject *_parent)
 {
     chargerConfiguration();
     sauvegarderConfiguration();
-    m_vannes.reserve(_nbVannes);
+    vannes.reserve(_nbVannes);
 
     for (int i = 0; i < _nbVannes; i++)
     {
         Vanne *laVanne = new Vanne(i + 1, this);
         laVanne->setNom(QString("Vanne %1").arg(i + 1));
-        m_vannes.append(laVanne);
+        vannes.append(laVanne);
     }
 
     connect(&com, &CommunicationESP32::messageReceived,this, &ControleurArrosage::traiterMessage);
@@ -49,7 +49,7 @@ int ControleurArrosage::rowCount(const QModelIndex &_parent) const
     int retour = 0;
 
     if (!_parent.isValid())
-        retour = m_vannes.size();
+        retour = vannes.size();
 
     return retour;
 }
@@ -416,9 +416,9 @@ void ControleurArrosage::onConnexionPerdue()
     emit connecteChanged();
     if (!derniereUrl.isEmpty())
         timerReconnexion.start();
-    for (int i = 0; i < m_vannes.size(); i++)
+    for (int i = 0; i < vannes.size(); i++)
     {
-        m_vannes[i]->setSynchronisee(false);
+        vannes[i]->setSynchronisee(false);
         notifyRowChanged(i);
     }
 }
@@ -474,8 +474,8 @@ Vanne* ControleurArrosage::get(int _index) const
 {
     Vanne *retour = nullptr;
 
-    if (_index >= 0 && _index < m_vannes.size())
-        retour = m_vannes[_index];
+    if (_index >= 0 && _index < vannes.size())
+        retour = vannes[_index];
 
     return retour;
 }
@@ -484,7 +484,7 @@ Vanne* ControleurArrosage::getParId(int _id) const
 {
     Vanne *retour = nullptr;
 
-    for (Vanne *v : m_vannes)
+    for (Vanne *v : vannes)
     {
         if (v->getId() == _id)
             retour = v;
@@ -497,9 +497,9 @@ int ControleurArrosage::indexParId(int _id) const
 {
     int retour = -1;
 
-    for (int i = 0; i < m_vannes.size(); i++)
+    for (int i = 0; i < vannes.size(); i++)
     {
-        if (m_vannes[i]->getId() == _id)
+        if (vannes[i]->getId() == _id)
             retour = i;
     }
 

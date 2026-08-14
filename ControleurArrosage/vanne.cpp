@@ -11,13 +11,13 @@
 
 Vanne::Vanne(const int _id, QObject *_parent)
     : QObject(_parent)
-    , m_etat(false)                          // Valeurs PAR DÉFAUT :
-    , m_mode(Manuel)                         // elles ne reflètent pas
-    , m_programmeState(Suspendu)             // l'électrovanne réelle
-    , m_debut(QDateTime::currentDateTime())  // tant que m_synchronisee
-    , m_duree(60)                            // est faux
-    , m_frequence(24)
-    , m_synchronisee(false)
+    , etat(false)                          // Valeurs PAR DÉFAUT :
+    , mode(Manuel)                         // elles ne reflètent pas
+    , programmeState(Suspendu)             // l'électrovanne réelle
+    , debut(QDateTime::currentDateTime())  // tant que synchronisee
+    , duree(60)                            // est faux
+    , frequence(24)
+    , synchronisee(false)
     , id(_id)
 {
 }
@@ -26,42 +26,42 @@ Vanne::Vanne(const int _id, QObject *_parent)
 
 bool Vanne::getEtat() const
 {
-    return m_etat;
+    return etat;
 }
 
 Vanne::MODE Vanne::getMode() const
 {
-    return m_mode;
+    return mode;
 }
 
 Vanne::PROGRAM_STATE Vanne::getProgrammeState() const
 {
-    return m_programmeState;
+    return programmeState;
 }
 
 QString Vanne::getNom() const
 {
-    return m_nom;
+    return nom;
 }
 
 QDateTime Vanne::getDebut() const
 {
-    return m_debut;
+    return debut;
 }
 
 int Vanne::getDuree() const
 {
-    return m_duree;
+    return duree;
 }
 
 int Vanne::getFrequence() const
 {
-    return m_frequence;
+    return frequence;
 }
 
 bool Vanne::estSynchronisee() const
 {
-    return m_synchronisee;
+    return synchronisee;
 }
 
 int Vanne::getId() const
@@ -73,72 +73,72 @@ int Vanne::getId() const
 
 void Vanne::setEtat(bool _etat)
 {
-    if (m_etat != _etat)
+    if (etat != _etat)
     {
-        m_etat = _etat;
+        etat = _etat;
         emit etatChanged();
     }
 }
 
 void Vanne::setMode(MODE _mode)
 {
-    if (m_mode != _mode)
+    if (mode != _mode)
     {
-        m_mode = _mode;
+        mode = _mode;
         emit modeChanged();
     }
 }
 
 void Vanne::setProgrammeState(PROGRAM_STATE _state)
 {
-    if (m_programmeState != _state)
+    if (programmeState != _state)
     {
-        m_programmeState = _state;
+        programmeState = _state;
         emit programmeStateChanged();
     }
 }
 
 void Vanne::setNom(const QString &_nom)
 {
-    if (m_nom != _nom)
+    if (nom != _nom)
     {
-        m_nom = _nom;
+        nom = _nom;
         emit nomChanged();
     }
 }
 
 void Vanne::setDebut(const QDateTime &_debut)
 {
-    if (m_debut != _debut)
+    if (debut != _debut)
     {
-        m_debut = _debut;
+        debut = _debut;
         emit debutChanged();
     }
 }
 
 void Vanne::setDuree(int _duree)
 {
-    if (m_duree != _duree)
+    if (duree != _duree)
     {
-        m_duree = _duree;
+        duree = _duree;
         emit dureeChanged();
     }
 }
 
 void Vanne::setFrequence(int _frequence)
 {
-    if (m_frequence != _frequence)
+    if (frequence != _frequence)
     {
-        m_frequence = _frequence;
+        frequence = _frequence;
         emit frequenceChanged();
     }
 }
 
 void Vanne::setSynchronisee(bool _synchronisee)
 {
-    if (m_synchronisee != _synchronisee)
+    if (synchronisee != _synchronisee)
     {
-        m_synchronisee = _synchronisee;
+        synchronisee = _synchronisee;
         emit synchroniseeChanged();
     }
 }
@@ -153,7 +153,7 @@ void Vanne::setId(int _newId)
 
 void Vanne::toggleEtat()
 {
-    setEtat(!m_etat);
+    setEtat(!etat);
 }
 
 void Vanne::activerProgramme()

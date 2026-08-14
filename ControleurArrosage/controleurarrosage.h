@@ -271,7 +271,7 @@ private:
     /// @return Vanne::MODE correspondant (Vanne::Manuel si _mode n'est pas reconnu).
     static Vanne::MODE protocoleVersMode(char _mode);
 
-    QVector<Vanne*> m_vannes;              ///< Vannes gérées par le modèle, dans l'ordre d'exposition à QML.
+    QVector<Vanne*> vannes;              ///< Vannes gérées par le modèle, dans l'ordre d'exposition à QML.
     CommunicationESP32 com;                ///< Transport WebSocket vers le boîtier ESP32.
     ProtocoleArrosageClient protocole;     ///< Encodeur/décodeur des trames JSON du protocole applicatif.
     bool connecte;                         ///< État de connexion courant (voir estConnecte()/connecteChanged()).
