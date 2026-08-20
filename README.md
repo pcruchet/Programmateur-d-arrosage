@@ -13,7 +13,8 @@ TW2 est un système d'arrosage automatique **autonome en énergie**, piloté à 
 ┌─────────────────────────────────────────────────────────────────┐
 │  Panneau solaire 100 W                                          │
 │       ↓                                                         │
-│  Batterie 3S 18650  →  LM2596 (12 V)  →  Vannes bistables x4    │
+│  Batterie 3S 18650  →  LM2596 (12 V)  → Charge des batteries    | 
+|                     →  LM2596 (9 V)   → Vannes bistables x4     │
 │                     →  LM2596 (3.3 V) →  ESP32 LOLIN32          │
 │                                            ├── DS3231 (RTC)     │
 │                                            ├── SSD1306 (OLED)   │
@@ -23,7 +24,7 @@ TW2 est un système d'arrosage automatique **autonome en énergie**, piloté à 
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-Le système fonctionne **sans cloud** : l'ESP32 crée son propre point d'accès Wi-Fi (mode `WIFI_MODE_APSTA`) et communique directement avec l'application via WebSocket.
+Le système fonctionne **sans cloud** : l'ESP32 crée son propre point d'accès Wi-Fi (mode `WIFI_MODE_AP/STA`) et communique directement avec l'application via WebSocket.
 
 ---
 
@@ -75,7 +76,7 @@ Programmateur-d-arrosage/
 | Afficheur | SSD1306 128×64 OLED | Statut local du boîtier |
 | Batterie | Pack 3S 18650 | Stockage énergie solaire |
 | Panneau solaire | 100 W | Source d'énergie principale |
-| Régulateurs | LM2596 (×2) | 12 V vannes / 3,3 V ESP32 |
+| Régulateurs | LM2596 (×3) | 12 V Charge batterie / 9 V vannes / 3,3 V ESP32 |
 
 ---
 
@@ -166,7 +167,7 @@ Le projet est réparti entre **quatre étudiants**, chacun responsable d'un pér
 |---|---|---|
 | `MesureBatteries` | [lib/MesureBatteries/](https://github.com/pcruchet/Programmateur-d-arrosage/tree/main/BoitierCommandeArrosage/lib/MesureBatteries) | Lecture tension batterie par ADC, calcul niveau de charge |
 | `BoutonPoussoir` | [lib/BoutonPoussoir/](https://github.com/pcruchet/Programmateur-d-arrosage/tree/main/BoitierCommandeArrosage/lib/BoutonPoussoir) | Détection appui sur GPIO36, source de réveil ext1 |
-| Carte puissance | — | LM2596 × 2 (12 V / 3,3 V), MOSFET Q1 (IRF9530) coupure vannes |
+| Carte puissance | — | LM2596 × 3 (12 V / 9 V / 3,3 V), MOSFET Q1 (IRF9530) coupure vannes |
 
 **Modes de sommeil implémentés :**
 
@@ -190,9 +191,8 @@ Le projet est réparti entre **quatre étudiants**, chacun responsable d'un pér
 | [PlatformIO](https://platformio.org/) | Build, upload, tests Unity (firmware ESP32) |
 | [Qt Creator](https://www.qt.io/product/development-tools) | IDE application Qt/QML/Android |
 | [Modelio](https://www.modelio.org/) | Diagrammes UML (classes, séquences, activités) |
-| [draw.io](https://app.diagrams.net/) | Schéma d'architecture OSI |
+| [libre office](https://fr.libreoffice.org/) | Rédaction des dossiers et Schéma d'architecture OSI |
 | [Doxygen](https://www.doxygen.nl/) + [doxyqml](https://github.com/agateau/doxyqml) | Génération de la documentation (commentaires dans `.h` uniquement) |
-| Node.js `docx` | Génération des dossiers techniques `.docx` |
 
 ### Dépendances firmware (PlatformIO)
 
@@ -237,5 +237,5 @@ Elle couvre le firmware ESP32 et l'application Qt (via doxyqml pour les fichiers
 
 ## Licence
 
-Projet pédagogique — Lycée Touchard-Washington, Le Mans.  
+Projet pédagogique à usage d'exemple — Lycée Touchard-Washington, Le Mans.  
 Encadrant : Philippe Cruchet (`@pcruchet`).
